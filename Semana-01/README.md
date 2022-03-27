@@ -1,6 +1,5 @@
 # Trackgenix
-Trackgenix is a time tracking and team management web application.
-
+Trackgenix is a time tracking and team management web application.  This app is a weekly asignment from the bootcamp "Become a Software Developer March 2022" dictated by Radium Rocket. This repository contains the html code that forms the fundations of the landing desktop page for this app.
 ## Usage
 
 ```
