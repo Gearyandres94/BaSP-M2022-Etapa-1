@@ -3,7 +3,7 @@ Trackgenix is a time tracking and team management web application.  This app is 
 ## Usage
 
 ```
-1.Download index.html and img folder.
+1.Download index.html and img folder from Semana-02 folder.
 2. Place them in the same folder.
 3.Run index.html in any browser.
 ```
