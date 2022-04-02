@@ -17,7 +17,7 @@ h1{
 }
 h2{
     font-weight: 700;
-    font-size: 40px;
+    font-size: 31.58px;
     line-height: 47px;  
 }
 h3{
@@ -47,6 +47,8 @@ header{
 aside{
     position:fixed;
     width: 308px;
+    height: 730px;
+    margin-left: 18.71px;
 }
 
 header div{
@@ -92,5 +94,54 @@ header a{
    display: inline-block;
     margin-bottom: 37.07px ;
     
+}
+
+.aside-menu{
+width: 268px;
+height: 330px;
+margin-right: 21.29px;
+
+}
+#options{
+width: 268px;
+height: 208px;
+}
+#options div{
+    background-color: black;
+    height: 1px;
+}
+aside a {
+    text-decoration: none;
+}
+aside li{
+    margin-top: 39.84px;
+    margin-bottom: 19px;
+    list-style-type: none;
+}
+.under-green{
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 3.95px solid #AACE9B ;
+   
+}
+#aside-p{
+    margin-top: 33.88px;
+}
+#contact-info{
+    margin-top: 16.34px;
+    display: inline-block;
+    width: 256px;
+}
+aside img{
+    
+    margin-left:auto;
+    
+}
+.icon.aside-a{
+    display: inline-block;
+    width:max-content;
+}
+aside li p{
+    display:inline;
 }
 
