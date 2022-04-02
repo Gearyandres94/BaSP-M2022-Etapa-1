@@ -1,6 +1,14 @@
-html{
+*{
     font-family: 'Roboto', sans-serif;
     color: #373867;
+    
+}
+header, section, footer, hr {
+   
+    margin-right: 10px;
+    margin-left:auto;
+   width: 1110px;
+   
 }
 h1{
     font-weight: 700;
@@ -28,3 +36,16 @@ p{
     font-size: 12px;
     line-height: 14px;
 }
+
+aside{
+    position:fixed;
+    width: 308px;
+}
+
+.icon{
+    width: 32px;
+    height: 32px;
+}
+
+
+
