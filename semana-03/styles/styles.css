@@ -37,15 +37,60 @@ p{
     line-height: 14px;
 }
 
+header{
+    margin-top: 11px;
+    margin-bottom: 16px;
+    left: 320px;
+    height: 110px;
+}
+
 aside{
     position:fixed;
     width: 308px;
 }
 
-.icon{
-    width: 32px;
+header div{
+    display: inline-block;
+    width: 187.32px;
     height: 32px;
+    margin-left:auto ;
+
+}
+header h2{
+    display: inline-block;
+    width: 771px;
+    margin-top: 64px;
+    margin-left: 34.67px;
+    
+}
+header a{
+    text-decoration: none;
+    margin-right: 16px;
 }
 
 
+
+.icon{
+    width: 31.18px;
+    height: 32px;
+}
+
+.last {
+    margin-right: 0px;
+}
+
+.green-bar{
+    width: 1110px;
+    height: 6px;
+    background: #AACE9B;
+    margin-right: 10px;
+    margin-left:auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+#menu-icon {
+   display: inline-block;
+    margin-bottom: 37.07px ;
+    
+}
 
