@@ -36,6 +36,14 @@ p{
     font-size: 12px;
     line-height: 14px;
 }
+button{
+    background: #FFFFFF;
+    border: 3px solid #AACE9B;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 14px 36px;
+
+}
 
 header{
     margin-top: 11px;
@@ -52,6 +60,7 @@ aside{
 }
 
 header div{
+    align-items: right;
     display: inline-block;
     width: 187.32px;
     height: 32px;
@@ -60,7 +69,7 @@ header div{
 }
 header h2{
     display: inline-block;
-    width: 771px;
+    width: 848px;
     margin-top: 64px;
     margin-left: 34.67px;
     
@@ -145,3 +154,44 @@ aside li p{
     display:inline;
 }
 
+
+.presentation{
+   width: 476px;
+  
+
+}
+
+#title img{
+    width: 570px;
+    height:372px;
+    float: right;
+}
+
+.presentation h2{
+    margin-top: 27px ;
+    font-size: 20px;
+    font-weight: 400px;
+    line-height: 23px;
+}
+
+.presentation p{
+    display: inline-block;
+    width: 378.23px;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+hr{
+    margin-top:32px ;
+    margin-bottom:32px ;
+    clear: both;
+    
+}
+#ti{
+    display: inline-block;
+    width: 476px;
+    height: 372px;
+}
+#ti button{
+    margin-top: 40px;
+}
