@@ -1,9 +1,9 @@
-*{
+body{
     font-family: 'Roboto', sans-serif;
     color: #373867;
     
 }
-header, section, footer, hr {
+header, section, main, article, footer, hr {
    
     margin-right: 10px;
     margin-left:auto;
@@ -161,7 +161,7 @@ aside li p{
 
 }
 
-#title img{
+main img{
     width: 570px;
     height:372px;
     float: right;
@@ -195,3 +195,79 @@ hr{
 #ti button{
     margin-top: 40px;
 }
+
+.image-container{
+    margin:30px;
+    width:94.19px;
+    height:94.19px;
+    overflow:hidden;
+    border-radius: 3px;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    position:relative;
+    -webkit-box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, .05);
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, .05);
+    float: left;
+    }
+.image-container img{
+    transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg); /* IE 9 */
+    -webkit-transform: rotate(-45deg); /* Safari and Chrome */
+    top:-100px;
+    left:-100px;
+}
+.container-features{
+display: inline-block;
+    width: 409px;
+    margin-right: 149px;
+}
+
+.container-features p{
+    clear: right;
+}
+
+.container-features h4{
+    display: inline-block;
+    clear: right;
+    margin-bottom: 41px;
+    margin-top: 9px;
+}
+.container-features.container-end{
+    margin-right: 114px;
+}
+.why{
+    height:442px ;
+    width: 1110px;
+    margin-right: 10px;
+}
+
+.why img{
+    width: 255px;
+    height: 231px;
+}
+
+.hzt-bar{
+    display: inline-block;
+    border-left: 1px solid black;
+    height: 360px; 
+    margin: 0px 9px; 
+}
+.why article{
+display: inline-block;
+width: 256px;
+margin:45px 0px 0px 0px ;
+
+
+}
+
+.why h4{
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.why p{
+    width: 254px;
+    height: 53px;
+    margin: 0px;
+}
+
