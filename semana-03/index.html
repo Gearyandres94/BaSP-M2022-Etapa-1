@@ -176,13 +176,15 @@
             </article>
         </section>
         <hr>
-        <section>
+        <section class="contact">
             <h3>Contact</h3>
             <form action="">
-                <label for="name1"></label>
-                <input type="text" id="name" name="name1" placeholder="Name">
-                <label for="email"></label>
-                <input type="email" id="email" name="email" placeholder="Email">
+                <div>
+                    <label for="name1"></label>
+                    <input type="text" id="name" name="name1" placeholder="Name">
+                    <label for="email"></label>
+                    <input type="email" id="email" name="email" placeholder="Email">
+                </div>
                 <label for="contactarea"></label>
                 <select  id="contactarea">
                     <option value="">Contact Area</option>
@@ -190,13 +192,13 @@
                     <option value="it">I.T.</option>
                     <option value="sales">Sales</option>
                 </select>
-               <textarea name="" id="" cols="30" rows="10" placeholder="Enter your Message..."></textarea>
+               <textarea name="" id="comment" cols="30" rows="10" placeholder="Enter your Message..."></textarea>
                 <button type="submit">Send Message</button>
                 <button type="reset">Reset</button>
             </form>
         </section>
         <hr>
-        <section>
+        <section class="history">
             <h3>Our History</h3>
             <h4>Our Beginings</h4>
             <p>
@@ -213,29 +215,33 @@
                 Maecenas sit amet est non sem porta dapibus quis in justo.
             </p>
             <h4>Critical Moments</h4>
-            <img src="img/crucial-moments1.jpg" alt="panoramic photo of a complex of buildings" width="500" height="350">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet congue sapien,
-                fringilla condimentum felis. Fusce eget pharetra tellus. Sed blandit, diam vulputate
-                congue tincidunt, justo lectus interdum enim, in dictum nunc dui eget ligula. Vestibulum
-                ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam
-                consectetur risus vulputate fringilla semper. In ut quam ante. Vestibulum eget dapibus mauris.
-                Maecenas vel diam sed felis dictum sollicitudin sed ac dui. Nullam ultricies nulla lacus,
-                id semper nibh dictum et.
-            </p>
-            <img src="img/crucial-moments2.jpg" alt="a golfer playing and his caddy" width="500" height="350">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet congue sapien,
-                fringilla condimentum felis. Fusce eget pharetra tellus. Sed blandit, diam vulputate
-                congue tincidunt, justo lectus interdum enim, in dictum nunc dui eget ligula. Vestibulum
-                ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam
-                consectetur risus vulputate fringilla semper. In ut quam ante. Vestibulum eget dapibus mauris.
-                Maecenas vel diam sed felis dictum sollicitudin sed ac dui. Nullam ultricies nulla lacus,
-                id semper nibh dictum et.
-            </p>
+            <div>
+                <img src="img/crucial-moments1.jpg" alt="panoramic photo of a complex of buildings" width="500" height="350">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet congue sapien,
+                    fringilla condimentum felis. Fusce eget pharetra tellus. Sed blandit, diam vulputate
+                    congue tincidunt, justo lectus interdum enim, in dictum nunc dui eget ligula. Vestibulum
+                    ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam
+                    consectetur risus vulputate fringilla semper. In ut quam ante. Vestibulum eget dapibus mauris.
+                    Maecenas vel diam sed felis dictum sollicitudin sed ac dui. Nullam ultricies nulla lacus,
+                    id semper nibh dictum et.
+                </p>
+            </div>
+            <div>
+                <img src="img/crucial-moments2.jpg" alt="a golfer playing and his caddy" width="500" height="350" id="caddy">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet congue sapien,
+                    fringilla condimentum felis. Fusce eget pharetra tellus. Sed blandit, diam vulputate
+                    congue tincidunt, justo lectus interdum enim, in dictum nunc dui eget ligula. Vestibulum
+                    ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam
+                    consectetur risus vulputate fringilla semper. In ut quam ante. Vestibulum eget dapibus mauris.
+                    Maecenas vel diam sed felis dictum sollicitudin sed ac dui. Nullam ultricies nulla lacus,
+                    id semper nibh dictum et.
+                </p>
+            </div>
         </section>
         <hr>
-        <section>
+        <section class="products">
             <!-- Grid to be added with Css -->
             <div>
                 <h3>Products</h3>
@@ -265,20 +271,22 @@
                 </ol>
             </div>
         </section>
-        <div class="green-bar">
+        <div class="green-bar"> </div>
         <footer>
-            <a href="">
-                <img src="img/linkedin-log.png" alt="Linkedin Logo" class="icon">
-            </a>
-            <a href="">
-                <img src="img/Twitter-logo.png" alt="Twitter Logo" class="icon">
-            </a>
-            <a href="">
-                <img src="img/facebook-logo.png" alt="Facebook Logo" class="icon">
-            </a>
-            <a href="">
-                <img src="img/instagram-logo.png" alt="Instagram Logo" class="icon">
-            </a>
+            <div>
+                <a href="">
+                    <img src="img/linkedin-log.png" alt="Linkedin Logo" class="icon">
+                </a>
+               <a href="">
+                    <img src="img/Twitter-logo.png" alt="Twitter Logo" class="icon">
+                </a>
+                <a href="">
+                    <img src="img/facebook-logo.png" alt="Facebook Logo" class="icon">
+                </a>
+                <a href="">
+                    <img src="img/instagram-logo.png" alt="Instagram Logo" class="icon">
+                </a>
+        </div>
             <p>Rosario, Argentina.</p>
             <p>Copyright &copy 2022 Trackgenix SA. All rights reserved</p>
         </footer>
