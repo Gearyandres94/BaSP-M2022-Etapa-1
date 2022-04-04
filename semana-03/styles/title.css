@@ -1,0 +1,40 @@
+#ti{
+    display: inline-block;
+    width: 476px;
+    height: 372px;
+}
+
+#ti button{
+    margin-top: 40px;
+    color: #AACE9B;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+
+.presentation{
+    width: 476px;
+}
+
+ .presentation h2{
+    margin-top: 27px ;
+    font-size: 20px;
+    font-weight: 400px;
+    line-height: 23px;
+}
+
+.presentation p{
+    display: inline-block;
+    width: 378.23px;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.title img{
+    float: right;
+    width: 570px;
+    height:372px;
+}

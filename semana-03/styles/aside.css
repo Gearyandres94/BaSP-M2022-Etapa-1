@@ -1,0 +1,54 @@
+#contact-info{
+    display: inline-block;
+    width: 256px;
+    margin-top: 16.34px; 
+}
+#options{
+    width: 268px;
+    height: 208px;
+    }
+#options div{
+    height: 1px;
+    background-color: black;
+}
+aside{
+    position:fixed;
+    width: 308px;
+    height: 730px;
+    margin-left: 18.71px;
+}
+.aside-menu{
+    width: 268px;
+    height: 330px;
+    margin-right: 21.29px;    
+}
+aside a {
+    text-decoration: none;
+}
+aside li{
+    margin-top: 39.84px;
+    margin-bottom: 19px;
+    list-style-type: none;
+}
+#aside-p{
+    margin-top: 33.88px;
+}
+
+aside img{
+    margin-left:auto;  
+}
+.icon.aside-a{
+    display: inline-block;
+    width: max-content;
+}
+aside li p{
+    display:inline;
+}
+.last {
+    margin-right: 0px;
+}
+.under-green{
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 3.95px solid #AACE9B ;
+}
