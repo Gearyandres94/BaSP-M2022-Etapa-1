@@ -1,5 +1,5 @@
 .why{
-    height:442px ;
+    height: 442px ;
     width: 1110px;
     margin-right: 10px;
 }
@@ -12,14 +12,14 @@
 .hzt-bar{
     display: inline-block;
     height: 360px; 
-    margin: 0px 9px; 
+    margin: 0px 9px -32px 9px  ; 
     border-left: 1px solid black;
 }
 
 .why article{
     display: inline-block;
     width: 256px;
-    margin:45px 0px 0px 0px ;
+    margin: 45px 0px 0px 0px ;
 }
 
 .why h4{

@@ -14,5 +14,9 @@ footer a{
 }
 
 footer p{
-    margin-bottom: 9px;
+    margin-bottom: 16px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
 }

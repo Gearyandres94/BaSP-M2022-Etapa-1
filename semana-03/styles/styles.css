@@ -7,7 +7,7 @@ body{
 header, main, footer {
     width: 1110px;
     margin-right: 10px;
-    margin-left:auto;
+    margin-left: auto;
   
 }
 
@@ -21,6 +21,9 @@ h2{
     font-weight: 700;
     font-size: 31.58px;
     line-height: 47px;  
+}
+a{
+    color:#373867;
 }
 
 h3{
@@ -50,6 +53,12 @@ button{
     border: 3px solid #AACE9B;
 }
 
+hr{
+    clear: both;
+    margin-top: 32px ;
+    margin-bottom: 32px ;   
+}
+
 .icon{
     width: 31.18px;
     height: 32px;
@@ -59,14 +68,8 @@ button{
     width: 1110px;
     height: 6px;
     margin-right: 10px;
-    margin-left:auto;
+    margin-left: auto;
     margin-top: 16px;
     margin-bottom: 16px;
     background: #AACE9B;
-}
-
-hr{
-    clear: both;
-    margin-top:32px ;
-    margin-bottom:32px ;   
 }
