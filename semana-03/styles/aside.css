@@ -1,54 +1,68 @@
-#contact-info{
-    display: inline-block;
-    width: 256px;
-    margin-top: 16.34px; 
-}
-#options{
-    width: 268px;
-    height: 208px;
-    }
-#options div{
-    height: 1px;
-    background-color: black;
-}
-aside{
+aside {
     position:fixed;
     width: 308px;
     height: 730px;
     margin-left: 18.71px;
 }
-.aside-menu{
+
+.aside-menu {
     width: 268px;
     height: 330px;
-    margin-right: 21.29px;    
+    margin-right: 21.29px;
 }
-aside a {
-    text-decoration: none;
+
+.under-green {
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 3.95px solid #AACE9B;
 }
-aside li{
+
+.bar-down li {
+    padding-bottom:19px;
+    border-bottom: 1px solid #C4C4C4;
+}
+
+aside ul {
+    width: 268px;
+    height: 208px;
+}
+
+aside li {
     margin-top: 39.84px;
     margin-bottom: 19px;
     list-style-type: none;
 }
-#aside-p{
+
+aside a {
+    text-decoration: none;
+}
+
+aside p {
     margin-top: 33.88px;
 }
 
-aside img{
-    margin-left:auto;  
+aside img {
+    margin-left:auto;
+    float:left;
 }
-.icon.aside-a{
+
+.aside-menu:last-child li img {
     display: inline-block;
     width: max-content;
 }
-aside li p{
-    display:inline;
-}
-.last {
-    margin-right: 0px;
-}
-.under-green{
+
+.aside-menu:last-child a {
     display: inline-block;
-    padding-bottom: 10px;
-    border-bottom: 3.95px solid #AACE9B ;
+    margin-top: 10px;
+    margin-left:19px
+}
+
+.aside-menu:last-child li:last-child img {
+    margin-left: 5px;
+    
+}
+
+aside li p {
+    display:inline;
+    margin-left:26px;
 }

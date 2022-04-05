@@ -1,29 +1,34 @@
-#menu-icon {
-    display: inline-block;
-     margin-bottom: 37.07px ;
-}
-header{
+header {
     height: 110px;
     margin-top: 11px;
     margin-bottom: 16px;
-    
 }
-header div{
-    align-items: right;
-    display: inline-block;
-    width: 187.32px;
-    height: 32px;
-    margin-left:auto ;
 
+header input {
+    display: inline-block;
+    margin-bottom: 37.07px ;
 }
-header h2{
+
+header h2 {
     display: inline-block;
     width: 848px;
     margin-top: 64px;
     margin-left: 34.67px;
-    
 }
-header a{
+
+header div {
+    display: inline-block;
+    width: 187.32px;
+    height: 32px;
+    align-items: right;
+    margin-left:auto ;
+}
+
+header a {
     margin-right: 16px;
     text-decoration: none;
+}
+
+header div:last-child a:last-child {
+    margin-right: 0px;
 }

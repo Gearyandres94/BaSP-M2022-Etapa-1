@@ -1,17 +1,17 @@
-.products div{
+.products div {
     display: inline-block;
     width: 33%;
-   
 }
-.products h3{
+
+.products h3 {
     margin-bottom: 14px;
 }
 
-ol{
+ol {
     margin-left: 18px;
 }
 
-.products li{
+.products li {
     list-style-type: decimal;
     font-family: 'Roboto';
     font-style: normal;

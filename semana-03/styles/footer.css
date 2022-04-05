@@ -1,19 +1,19 @@
-footer{
+footer {
+    height: 197px;
     text-align: center;
 }
 
-footer div{
-    margin-top: 48px;
+footer div {
+    margin-top: 16px;
     margin-bottom: 13px;
 }
 
-footer a{
-
+footer a {
     margin-right: 55px;
     text-decoration: none;
 }
 
-footer p{
+footer p {
     margin-bottom: 16px;
     font-style: normal;
     font-weight: 400;

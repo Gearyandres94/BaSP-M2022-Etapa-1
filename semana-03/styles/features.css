@@ -1,9 +1,15 @@
-.image-container{
+.container-features {
+    display: inline-block;
+    width: 409px;
+    margin-right: 144px;
+}
+
+.image-container {
     position:relative;
     overflow:hidden;
     float: left;
-    width:94.19px;
-    height:94.19px;
+    width:94px;
+    height:95px;
     margin:30px;
     border-radius: 3px;
     transform: rotate(45deg);
@@ -11,31 +17,28 @@
     -webkit-transform: rotate(45deg);
     -webkit-box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, .05);
     box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, .05);
-    }
+}
 
-.image-container img{ 
+.image-container img { 
     top:-100px;
     left:-100px;
     transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg); /* IE 9 */
-    -webkit-transform: rotate(-45deg); /*Safari and Chrome */  
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
 }
-.container-features{
-    display: inline-block;
-    width: 409px;
-    margin-right: 149px;
-}
-    
-.container-features p{
-    clear: right;
-}
-    
-.container-features h4{
+
+.container-features h4 {
     display: inline-block;
     clear: right;
     margin-top: 9px;
-    margin-bottom: 41px;
+    margin-bottom: 20px;
 }
-.container-features.container-end{
+
+.container-features p {
+    clear: right;
+    margin-left: 20px ;
+}
+
+.features div:last-child {
     margin-right: 114px;
 }
