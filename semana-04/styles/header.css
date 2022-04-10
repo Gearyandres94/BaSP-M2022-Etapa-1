@@ -1,0 +1,38 @@
+header {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+}
+
+header div:first-of-type {
+    display: flex;
+    padding-bottom: 30px;
+    width: 100%;
+}
+
+header div:first-of-type img{
+    margin-right: 60px;
+    width: 30px;
+    height: 30px;
+    margin-top: auto;
+}
+
+header h2{
+    font-size: 47px;
+    width: 300px;
+}
+
+header .net{
+    width: 189px;
+    height: 32px;
+    margin:auto;
+    padding-bottom: 30px;
+}
+
+header .net div{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}

@@ -5,8 +5,13 @@
         <link rel="stylesheet" href="styles/reset.css">
         <link rel="stylesheet" href="styles/styles.css">
         <link rel="stylesheet" href="styles/header.css">
-        <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/aside.css">
+        <link rel="stylesheet" href="styles/title.css">
+        <link rel="stylesheet" href="styles/features.css">
+        <link rel="stylesheet" href="styles/why.css">
+        <link rel="stylesheet" href="styles/contact.css">
+        <link rel="stylesheet" href="styles/our-history.css">
+        <link rel="stylesheet" href="styles/products.css">
         <link rel="stylesheet" href="styles/footer.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,38 +58,43 @@
             </div>
         </aside>
         <header>
-            <input type="image" name="menu" src="img/menu-img.png" alt="icono de menu" class="icon">
-            <h2>Trackgenix</h2>
             <div>
-                <a href="#" class="first">
-                    <img src="img/linkedin-log.png" alt="Linkedin Logo" class="icon first">
-                </a>
-                <a href="#">
-                    <img src="img/Twitter-logo.png" alt="Twitter Logo" class="icon">
-                </a>
-                <a href="#">
-                    <img src="img/facebook-logo.png" alt="Facebook Logo" class="icon">
-                </a>
-                <a href="#">
-                    <img src="img/instagram-logo.png" alt="Instagram Logo" class="icon">
-                </a>
+                <img src="img/menu-img.png" alt="menu android">
+                <h2>Trackgenix</h2>
+            </div>
+            <div class="net">
+                <div>
+                    <a href="#">
+                        <img src="img/linkedin-log.png" alt="Linkedin Logo" class="icon first">
+                    </a>
+                    <a href="#">
+                        <img src="img/Twitter-logo.png" alt="Twitter Logo" class="icon">
+                    </a>
+                    <a href="#">
+                        <img src="img/facebook-logo.png" alt="Facebook Logo" class="icon">
+                    </a>
+                    <a href="#">
+                        <img src="img/instagram-logo.png" alt="Instagram Logo" class="icon">
+                </div>
             </div>
         </header>
         <main>
             <div class="green-bar"></div>  
             <section class="title">
-                <img src="img/trackgenix1.jpg" alt="People sited along a table in a meeting">
-                <div>
-                    <div class="presentation">
-                        <h1>Hi, I'm Trackgenix by Trackgenix SA </h1>
-                        <h2>A free and fully responsive site Template</h2>
-                        <p>
-                            LoremLorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                            when Ipsum is simply dummy text of the printing and typesetting industry.
-                            an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        </p>
+                <div class="flex-container">
+                    <img src="img/trackgenix1.jpg" alt="People sited along a table in a meeting" width="320px">
+                    <div>
+                        <div class="presentation">
+                            <h1>Hi, I'm Trackgenix by Trackgenix SA </h1>
+                            <h2>A free and fully responsive site Template</h2>
+                            <p>
+                                LoremLorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                when Ipsum is simply dummy text of the printing and typesetting industry.
+                                an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            </p>
+                        </div>
+                        <button type="button">Learn More</button>
                     </div>
-                    <button type="button">Learn More</button>
                 </div>
             </section>
             <hr>
@@ -177,7 +187,7 @@
             <hr>
             <section class="contact">
                 <h3>Contact</h3>
-                <form action="">
+                <form>
                     <div>
                         <label for="name1"></label>
                         <input type="text" name="name1" placeholder="Name">
@@ -191,7 +201,7 @@
                         <option value="it">I.T.</option>
                         <option value="sales">Sales</option>
                     </select>
-                <textarea name="" cols="30" rows="10" placeholder="Enter your Message..."></textarea>
+                    <textarea name="" cols="30" rows="10" placeholder="Enter your Message..."></textarea>
                     <button type="submit">Send Message</button>
                     <button type="reset">Reset</button>
                 </form>
@@ -244,28 +254,52 @@
                 <div>
                     <h3>Products</h3>
                     <ol>
-                        <li>Features</li>
-                        <li>Downloads</li>
-                        <li>Integrations</li>
-                        <li>Aditional Features</li>
+                        <li>
+                            <a href="#">Features</a>
+                        </li>
+                        <li>
+                            <a href="#">Downloads</a>
+                        </li>
+                        <li>
+                            <a href="#">Integrations</a> 
+                        </li>
+                        <li>
+                            <a href="#">Aditional Features</a> 
+                        </li>
                     </ol>
                 </div>
                 <div>  
                     <h3>Bussines</h3>
                     <ol>
-                        <li>About Us</li>
-                        <li>Clients</li>
-                        <li>Resources</li>
-                        <li>Blog</li>
+                        <li>
+                            <a href="#">About Us</a> 
+                        </li>
+                        <li>
+                            <a href="">Clients</a>
+                        </li>
+                        <li>
+                            <a href="Resources"></a> 
+                        </li>
+                        <li>
+                            <a href="Blog"></a>
+                        </li>
                     </ol>
                 </div>
                 <div>
                     <h3>Support</h3>
                     <ol>
-                        <li>Help</li>
-                        <li>Tutorials</li>
-                        <li>API</li>
-                        <li>Contact</li>
+                        <li>
+                            <a href="#">Help</a>
+                        </li>
+                        <li>
+                            <a href="#">Tutorials</a>
+                        </li>
+                        <li>
+                            <a href="#">API</a> 
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
                     </ol>
                 </div>
             </section>

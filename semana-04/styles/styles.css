@@ -1,4 +1,4 @@
-body {
+* {
     font-family: 'Roboto', sans-serif;
     color: #373867;
 }
@@ -15,12 +15,13 @@ h1 {
 
 h2 {
     font-weight: 700;
-    font-size: 31.58px;
+    font-size: 40px;
     line-height: 47px;
 }
 
 a {
     color:#373867;
+    text-decoration: none;
 }
 
 h3 {
@@ -48,24 +49,21 @@ button {
     border: 3px solid #AACE9B;
     border-radius: 5px;
     background: #FFFFFF;
+    color: #AACE9B;
 }
 
 hr {
-    clear: both;
-    margin-top: 32px ;
-    margin-bottom: 32px ;
+    margin: 32px 60px;
+
 }
 
 .icon {
-    width: 31.18px;
+    width: 32px;
     height: 32px;
 }
 
 .green-bar {
     height: 6px;
-    margin-right: 10px;
-    margin-left: auto;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin: 16px 60px;
     background: #AACE9B;
 }

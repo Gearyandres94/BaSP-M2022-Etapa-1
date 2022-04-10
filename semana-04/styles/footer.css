@@ -1,0 +1,22 @@
+footer {
+    height: 197px;
+    text-align: center;
+}
+
+footer div {
+    margin-top: 16px;
+    margin-bottom: 13px;
+}
+
+footer a {
+    margin-right: 55px;
+    text-decoration: none;
+}
+
+footer p {
+    margin-bottom: 16px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+}

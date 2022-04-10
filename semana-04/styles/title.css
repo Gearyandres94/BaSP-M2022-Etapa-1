@@ -1,0 +1,27 @@
+.title {
+
+margin: 0px 60px;
+text-align: center;
+}
+.title .flex-container{
+    display: flex;
+    flex-flow:column wrap;
+}
+
+.title img {
+    width: 320px;
+    height: 239px;
+}
+
+.title h2 {
+    margin: 26px 0px 16px 0px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.title p {
+    margin-bottom: 26px;
+}
