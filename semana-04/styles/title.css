@@ -1,16 +1,20 @@
 .title {
-
-margin: 0px 60px;
+margin: 0px 10px;
 text-align: center;
-}
-.title .flex-container{
-    display: flex;
-    flex-flow:column wrap;
+display: flex;
+flex-flow:row wrap;
+justify-content: center;
+align-items: center;
+width: 100%;
 }
 
 .title img {
     width: 320px;
     height: 239px;
+}
+
+.title div {
+    width: 317px;
 }
 
 .title h2 {

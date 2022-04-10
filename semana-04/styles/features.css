@@ -1,15 +1,27 @@
+.features {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.features h3 {
+    width: 100%;
+    text-align: center;
+}
+
 .container-features {
-    display: inline-block;
-    width: 409px;
-    margin-right: 144px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:start;
+    align-content: center;
 }
 
 .image-container {
     position:relative;
     overflow:hidden;
-    float: left;
     width:94px;
     height:95px;
+    align-self: stretch;
     margin:30px;
     border-radius: 3px;
     transform: rotate(45deg);
@@ -27,18 +39,18 @@
     -webkit-transform: rotate(-45deg);
 }
 
-.container-features h4 {
-    display: inline-block;
-    clear: right;
-    margin-top: 9px;
-    margin-bottom: 20px;
+.container-features div:last-child {
+    width: 264px;
+    
 }
 
-.container-features p {
-    clear: right;
-    margin-left: 20px ;
+.container-features div h4 {
+
+    margin: 12px 0px 10px 15px;
+    align-self: flex-start;
 }
 
-.features div:last-child {
-    margin-right: 114px;
+.container-features div p {
+    margin-left: 15px ;
+    align-self: center;
 }
