@@ -1,0 +1,44 @@
+.why {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px;
+    text-align: center;
+}
+
+.why h3 {
+    width: 100%;
+}
+
+.why article {
+    width: 320px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 45px 0px 0px 0px ;
+}
+
+.why img {
+    width: 320px;
+    height: 231px;
+}
+
+.why h4 {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.why p {
+    width: 320px;
+    margin: 0px;
+}
+
+.hzt-bar {
+    display: none;
+
+    border-left: 1px solid black;
+}
+

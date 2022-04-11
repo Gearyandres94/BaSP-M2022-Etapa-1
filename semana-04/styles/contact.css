@@ -1,0 +1,70 @@
+.contact {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0px 45px;
+    max-width: 1110px;
+}
+
+.contact h3 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    text-decoration: underline;
+}
+
+.contact form {
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+form div:first-of-type {
+    width: 100%;
+    max-width: 1110px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+}
+
+form div:first-of-type input {
+    min-width: 350px;
+    max-width: 520px;
+}
+
+
+
+form select {
+    min-width: 160px;
+    width: 50%;
+    margin-top: 19px;
+    margin-bottom: 19px;
+}
+
+form textarea {
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+form div:last-of-type{
+    display: flex;
+}
+
+form button {
+    width:160px ;
+    height: 47px;
+    padding: 0px;   
+    border-radius: 5px;
+    background: #AACE9B;
+    text-align: center;
+    color: #373867;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;    
+}
+
+form button:last-of-type{
+    margin-left: 30px;
+}
