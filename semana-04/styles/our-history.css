@@ -1,0 +1,40 @@
+.history {
+min-width: 350px;
+max-width: 1110px;
+display: flex;
+flex-flow:row wrap ;
+justify-content: center;
+text-align: center;
+margin: 45px;
+}
+
+.history div h3 {
+    width: 100%;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+}
+
+.history div h4 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.history div p{
+    margin-bottom: 16px;
+}
+
+.history h4 {
+    margin-bottom: 16px;
+}
+
+.history img {
+ width: 350px;
+ height: 156px;
+ margin-bottom: 16px;
+}
+
+.history div:last-of-type p{
+    margin-bottom: 0px;
+}
+

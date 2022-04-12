@@ -51,6 +51,7 @@ button {
 
 hr {
     margin: 32px 45px;
+    max-width: 1110px;
 }
 
 .icon {
@@ -59,6 +60,7 @@ hr {
 }
 
 .green-bar {
+    max-width: 1110px;
     height: 6px;
     margin: 16px 45px;
     background: #AACE9B;

@@ -1,22 +1,32 @@
 footer {
-    height: 197px;
+    min-width: 350px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
     text-align: center;
+    margin: 0px 20px;
 }
 
 footer div {
-    margin-top: 16px;
-    margin-bottom: 13px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 footer a {
-    margin-right: 55px;
+    margin-right: 64px;
     text-decoration: none;
 }
 
 footer p {
-    margin-bottom: 16px;
+    margin-top: 20px;
+    width: 100%;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
+}
+
+footer p:last-of-type{
+    margin-bottom: 20px;
 }
