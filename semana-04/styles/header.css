@@ -1,39 +1,41 @@
 header {
-    margin: 0px 45px;
+    width: 100%;
+    max-width: 1110px;
+    min-width: 350px;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: start;
-    width: 100%;
+    align-content: center;
+
 }
 
 header div:first-of-type {
+    width: 476px;
+    max-width: 476px;
     display: flex;
     padding-bottom: 30px;
-    width: 100%;
 }
 
 header div:first-of-type img{
-    margin-right: 60px;
     width: 30px;
     height: 30px;
-    margin-top: auto;
 }
 
 header h2{
     font-size: 47px;
     width: 300px;
+    margin-left: 36px;
 }
 
 header .net{
-    width: 189px;
-    height: 32px;
-    margin:auto;
-    padding-bottom: 30px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 header .net div{
+    width: 194px;
     display: flex;
-    justify-content:space-evenly;
+    justify-content:space-between;
     align-items: center;
 }

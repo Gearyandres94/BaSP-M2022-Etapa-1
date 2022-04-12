@@ -1,16 +1,16 @@
 .title {
+    max-width: 1110px;
+    width: 100%;
     text-align: center;
     display: flex;
-    flex-flow:row wrap;
+    flex-flow:row wrap-reverse;
     justify-content: start;
     align-content: center;
-    width: 100%;
-    margin: 0px 45px;
 }
 
 .title img {
     width: 350px;
-    height: 239px;
+    height: 360px;
 }
 
 .title div {
@@ -28,3 +28,4 @@
 .title p {
     margin-bottom: 26px;
 }
+

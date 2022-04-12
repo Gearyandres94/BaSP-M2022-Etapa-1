@@ -1,11 +1,10 @@
 .products {
     display: flex;
     flex-flow: row wrap;
-    margin: 0px 45px;
     text-align: center;
 }
 .products div {
-    width: 350px;
+    width: 339px;
     display: flex;
     flex-flow: row wrap;
 
@@ -29,5 +28,4 @@ ol {
     font-weight: 700;
     font-size: 14px;
     line-height: 16px;
-
 }

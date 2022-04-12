@@ -1,8 +1,9 @@
 .features {
-    margin: 0px 45px;
+    max-width: 1110px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    margin: 0px 45px;
 }
 
 .features h3 {

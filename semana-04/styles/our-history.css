@@ -5,22 +5,36 @@ display: flex;
 flex-flow:row wrap ;
 justify-content: center;
 text-align: center;
-margin: 45px;
+
 }
 
-.history div h3 {
+.history div{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+}
+
+.history h3 {
     width: 100%;
     margin-bottom: 10px;
     text-decoration: underline;
     text-underline-offset: 7px;
 }
 
-.history div h4 {
+.history h4 {
+    width: 100%;
     margin-top: 16px;
     margin-bottom: 16px;
 }
-
-.history div p{
+.history div:last-of-type{
+    flex-wrap: wrap-reverse;
+}
+.history div p {
+    min-width: 350px;
+    max-width: 520px;
     margin-bottom: 16px;
 }
 
@@ -34,7 +48,8 @@ margin: 45px;
  margin-bottom: 16px;
 }
 
-.history div:last-of-type p{
+.history div:last-of-type p {
     margin-bottom: 0px;
 }
+
 
