@@ -13,6 +13,9 @@ Trackgenix is a time tracking and team management web application.  This app is 
 - Created Html based on a figma design.
 ### semana-03
 - Created several css files to give a style to the html created in semana-02. This style is not responsive and doesn't use flexbox. This design should be executed in a browser with a windows width of 1440px.
+### semana-04
+- The style is now responsive and it has flexbox. Works in 440px(mobile), 768px(tablet), 1440px(desktop) resolutions. 
+Github pages link: https://gearyandres94.github.io/BaSP-M2022-Etapa-1/semana-04/index.html
 
 ## Contact Info
 E-mail: gearyandres@gmail.com
