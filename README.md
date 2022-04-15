@@ -16,6 +16,9 @@ Trackgenix is a time tracking and team management web application.  This app is 
 ### semana-04
 - The style is now responsive and it has flexbox. Works in 440px(mobile), 768px(tablet), 1440px(desktop) resolutions. 
 Github pages link: https://gearyandres94.github.io/BaSP-M2022-Etapa-1/semana-04/index.html
+### semana-05
+- Several practicAL excerize to learn Javascript involving variables, sentences if, for, while, switch and functions.
+Github pages link: https://gearyandres94.github.io/BaSP-M2022-Etapa-1/semana-05/index.html
 
 ## Contact Info
 E-mail: gearyandres@gmail.com
