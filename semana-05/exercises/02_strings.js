@@ -40,7 +40,7 @@ subChain= chain.substring(0,1);
 
 subChain= subChain.toUpperCase();
 
-subChain= subChain + chain.substring(1,10);
+subChain+= chain.substring(1,10);
 
 console.log(subChain);
 
@@ -58,13 +58,12 @@ var countries = 'argentina e inglaterra';
 
 var countriesUpperCase = countries.substring(0,1).toUpperCase(); 
 
-countriesUpperCase = countriesUpperCase + countries.substring(1,countries.indexOf(' ',0));
+countriesUpperCase += countries.substring(1,countries.indexOf(' ',0));
 
-countriesUpperCase = countriesUpperCase + countries.substring(countriesUpperCase.length, countriesUpperCase.length+3);
+countriesUpperCase += countries.substring(countriesUpperCase.length, countriesUpperCase.length+3);
 
-countriesUpperCase = countriesUpperCase + 
-countries.substring(countriesUpperCase.length,countriesUpperCase.length+1).toUpperCase();
+countriesUpperCase += countries.substring(countriesUpperCase.length,countriesUpperCase.length+1).toUpperCase();
 
-countriesUpperCase= countriesUpperCase + countries.substring(countriesUpperCase.length,countries.length);
+countriesUpperCase+= countries.substring(countriesUpperCase.length,countries.length);
 
 console.log(countriesUpperCase);
