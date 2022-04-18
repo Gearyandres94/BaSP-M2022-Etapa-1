@@ -1,41 +1,22 @@
 header {
     width: 100%;
-    max-width: 1110px;
-    min-width: 350px;
     display: flex;
-    flex-flow: row wrap;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: start;
-    align-content: center;
-
 }
 
 header div:first-of-type {
-    width: 476px;
-    max-width: 476px;
+   display: flex;
+   width: 100%;
+   max-width: 540px;
+}
+
+header div img {
+    margin-right: 36px;
+}
+
+header div:nth-of-type(2) {
+    margin-left: auto;
     display: flex;
-    padding-bottom: 30px;
-}
-
-header div:first-of-type img{
-    width: 30px;
-    height: 30px;
-}
-
-header h2{
-    font-size: 47px;
-    width: 300px;
-    margin-left: 36px;
-}
-
-header .net{
-    display: flex;
-    justify-content: flex-end;
-}
-
-header .net div{
-    width: 194px;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
+    justify-content: center;
 }

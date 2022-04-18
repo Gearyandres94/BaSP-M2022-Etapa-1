@@ -1,31 +1,19 @@
-footer {
-    min-width: 350px;
+footer{
+    width: 100%;
     display: flex;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
     justify-content: center;
     text-align: center;
 }
 
 footer div {
-    width: 100%;
+    width: 320px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    margin-bottom: 17px;
 }
 
-footer a {
-    margin-right: 64px;
-    text-decoration: none;
-}
-
-footer p {
-    margin-top: 20px;
+footer  p {
     width: 100%;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-}
-
-footer p:last-of-type{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
