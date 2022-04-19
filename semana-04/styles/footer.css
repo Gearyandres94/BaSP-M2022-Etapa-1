@@ -1,4 +1,4 @@
-footer{
+.flex-wrapper footer{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -6,7 +6,7 @@ footer{
     text-align: center;
 }
 
-footer div {
+.flex-wrapper footer div {
     width: 320px;
     display: flex;
     justify-content: space-between;

@@ -4,7 +4,7 @@ main {
     justify-content: center;
 }
 
-.green-bar{
+.flex-wrapper .green-bar{
     width: 100%;
     margin: 16px 0px;
     border-bottom: solid 6px #aace9b;
@@ -19,24 +19,22 @@ section {
 .title {
     display: flex;
     flex-wrap: wrap-reverse;
-    justify-content: start;
-    text-align: center;
+    justify-content: center;
 }
 
 .title img{
     width:350px;
-    margin-left: auto;
     margin-bottom: 10px;
 }
 
 .title div {
-    margin-right: 15px;
+    display: flex;
+    max-width: 540px;
 }
 
 .title div div {
     min-width: 350px;
     max-width: 540px;
-    flex-grow: 2;
     margin:0px 0px 35px 0px;
 }
 
@@ -49,9 +47,14 @@ section {
     line-height: 23px;
 }
 
+.title button {
+    width: 165px;
+    height:50px
+}
+
 /*hr */
 
-hr {
+div main hr {
     margin: 31px 0px;
     width: 100%;
     
@@ -64,6 +67,7 @@ hr {
     flex-flow: row wrap;
     justify-content: flex-start;
     align-content: space-between;
+    align-items: center;
     text-align: center;
 }
 
@@ -110,6 +114,8 @@ hr {
 
 .features .container div:last-of-type {
     width: 50%;
+    flex-grow: 2;
+    margin-bottom: 32px;
 }
 
 .features .container div:last-of-type h4{
@@ -131,12 +137,14 @@ hr {
 }
 
 .why article {
-    max-width: 255px;
+    max-width: 350px;
+    padding-right: 11px; 
+    margin-left: 11px;
     margin-bottom:32px;
 }
 
 .why article img{
-    width:255px;
+    width:350px;
     margin-bottom: 16px;
 }
 
@@ -145,11 +153,15 @@ hr {
     margin-bottom: 7px;
 }
 
-.hzt-bar {
-    margin: 0px 11px;
-    height: 353px;
-    border-left: solid 1px;
-    display: none;
+.why article:first-of-type {
+    margin-left: 0px;
+}
+.why article:nth-of-type(2) {
+    padding-right: 0px;
+}
+
+.why article:last-of-type {
+    padding-right: 0px;
 }
 
 hr:nth-of-type(3){
@@ -182,14 +194,16 @@ hr:nth-of-type(3){
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 10px;
+    gap: 10px;
+    justify-content: flex-start;
+    margin: 0px 0px 10px 0px;
+
 }
 
 .contact form div input {
     min-width: 350px;
     width: 48%;
     height: 19px;
-    margin-right: 15px;
     margin-bottom: 10px;
 }
 
@@ -214,6 +228,7 @@ hr:nth-of-type(3){
     display: flex;
     justify-content: flex-start;
     width: 100%;
+    margin: 0px;
 }
 
 .contact form button {
@@ -244,6 +259,7 @@ hr:nth-of-type(3){
 }
 
 .history p {
+    flex-grow: 2;
     margin-bottom: 16px;
 }
 
@@ -279,16 +295,23 @@ hr:nth-of-type(5){
 .products {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     text-align: center;
 }
 
 .products div {
     min-width: 350px;
-    margin-bottom: 20px;
+   
 }
 
 .products div h3 {
+    width: 100%;
+    margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.products div:first-of-type  h3{
+    margin-top: 0px;
 }
 
 .products div ol {
@@ -306,24 +329,56 @@ hr:nth-of-type(5){
     margin-bottom: 0px;
 }
 
+/*Media queries*/
+
 @media (min-width:768px) {
 
     .title{
         text-align: left;
     }
-    .why .hzt-bar {
-        display: block;
+
+    .title img {
+        width:536px;
     }
 
-    .why .hzt-bar:nth-of-type(2){
-        display: none;
+    .why article:first-of-type {
+        margin-left: 11px;
+        border-right: 1px solid #373867;
+    }
+
+    .why article:nth-of-type(3) {
+        border-right: 1px solid #373867;
+    }
+
+    .products {
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .products h3{
+        text-align: left;
     }
     
 }
 @media (min-width:1440px) {
-    
-    .why .hzt-bar:nth-of-type(2){
-        display: block;
+    .title img {
+        margin-left: auto;
     }
-    
+
+    .features div .container {
+        max-width: 525px;
+    }
+
+    .why article {
+        width:250px;
+    }
+
+    .why article img {
+        width:250px;
+    }
+
+    .why article:nth-of-type(2) {
+        padding-right: 11px;
+        border-right: 1px solid #373867;
+    }
 }
