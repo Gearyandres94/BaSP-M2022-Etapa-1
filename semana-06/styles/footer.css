@@ -1,0 +1,19 @@
+.flex-wrapper footer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.flex-wrapper footer div {
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 17px;
+}
+
+footer  p {
+    width: 100%;
+    margin-bottom: 10px;
+}

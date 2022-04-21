@@ -1,0 +1,36 @@
+header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+header div:first-of-type {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   max-width: 540px;
+}
+
+header div img {
+    margin-right: 36px;
+}
+
+header div:nth-of-type(2) {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    header div:first-of-type {
+        justify-content: flex-start;
+    }
+
+    header div:nth-of-type(2) {
+        margin-left: auto;
+        margin-right: 0px;
+        justify-content: flex-end;
+    }
+}
