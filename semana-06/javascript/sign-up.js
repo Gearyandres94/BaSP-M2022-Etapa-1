@@ -225,28 +225,28 @@ window.onload = function()
     {
         var va = document.getElementById('pnumber').value;
 
-        // if ((validateNumber(va)) && (va.length==10))
-        // {
-        //     pnumber.style.border='2px solid #32CD32';
+         if (!(isNaN(va)) && (va.length==10))
+        {
+            pnumber.style.border='2px solid #32CD32';
 
-        //     pnumberB = true;
-        // }
+            pnumberB = true;
+        }
 
-        // else 
-        // {
-        //     var b = document.getElementById('pnumberDiv');
+        else 
+        {
+            var b = document.getElementById('pnumberDiv');
     
-        //     b.lastElementChild.textContent='The phone number is invalid.';
+            b.lastElementChild.textContent='The phone number is invalid.';
     
-        //     pnumber.style.border='2px solid #ffa07a';
+            pnumber.style.border='2px solid #ffa07a';
             
-        //     pnumberB = false;
-        // }       
+            pnumberB = false;
+        }       
     }
 
     function focusEventAddress()
     {
-        let b = document.getElementById('addressDiv');
+        var b = document.getElementById('addressDiv');
 
         b.lastElementChild.textContent='';   
     }
@@ -281,9 +281,7 @@ window.onload = function()
 
     function blurEventCity()
     {
-        var va = document.getElementById('city').value;
-
-        if (validateCity(va) && va.length > 3)
+        if (validateCity(document.getElementById('city').value))
         {
             city.style.border='2px solid #32CD32';
 
@@ -313,7 +311,7 @@ window.onload = function()
     {
         var va = document.getElementById('pcode').value;
 
-        if (validateNumber(va) && va.length > 3 && va.length < 6 )
+        if (!isNaN(va) && va.length <6 && va.length > 3)
         {
             pcode.style.border='2px solid #32CD32';
 
@@ -328,7 +326,7 @@ window.onload = function()
     
             pcode.style.border='2px solid #ffa07a';
 
-            pcode = false;
+            pcodeB = false;
         }       
     }
 
@@ -369,8 +367,10 @@ window.onload = function()
     }
 
     function blurEventPass()
-    {
-        if (validatePass(document.getElementById('pass').value) && va.length > 7)
+    {   
+        var va = document.getElementById('pass').value;
+
+        if (validatePass(va) && va.length > 7)
         {
             pass.style.border='2px solid #32CD32';
 
@@ -398,8 +398,8 @@ window.onload = function()
 
     function blurEventRpass()
     {
-        if (validatePass(document.getElementById('rpass').value) && 
-            va.match(document.getElementById('pass').value))
+        
+        if (document.getElementById('rpass').value == document.getElementById('pass').value )
         {
             rpass.style.border='2px solid #32CD32';
 
@@ -567,135 +567,262 @@ window.onload = function()
 
     function validateAddress(va)
     {
+        //testing for special characters.
+
+        for (var i = 0; i < va.length; i++)
+        {
+            for (var j = 0; j < specChar.length; j++) {
+                if (va[i] == specChar[j]) 
+                {
+                    return false;
+                }
+                
+            }
+        }
+
+        var wSpaceB = false;
+
+        //testing for whitespaces
+
+        for (var i = 0; i < va.length; i++) 
+        {
+            if (va.indexOf(' ') >= 0 && isNaN(va[va.indexOf(' ')-1]) && !isNaN(va[va.indexOf(' ')+1]))
+            {
+                wSpaceB =true;
+                break;
+            }
+        }
         
+        if (!wSpaceB)
+        {
+            return false
+        }
+
+        //Testing for number of non-whitespaces char
+
+        var va2 = va.split(' ').join('');
+
+        if (va2.length < 5)
+        {
+            return false;
+        }
+        else 
+        {
+            return true;
+        }
     }
 
     function validateCity(va)
     {
-        let format =/^[a-zA-Z0-9_]+$/;
+        
+        var letterC = 0;
 
-        if (va.match(format)){
-            return true;
+        var va2 = va.toLowerCase();
+
+        for (var i = 0; i < va2.length; i++) 
+        {
+            for (var j = 0; j < abc.length; j++) 
+            {
+                if (va2[i] == abc[j]) 
+                {
+                    letterC+=1;
+                }
+
+                if (letterC>=3)
+                {
+                    return true;
+                }
+            }
         }
-    
-        else {
-            return false;
-        }
+        
+        return false;
     
     }
     
     function validatePass(va)
     {
-        let format =/[A-Za-z]/;
+        va2 = va.toLowerCase();
 
-        let format2 = /[0-9]/;
+        var abcB = false;
 
-        if (va.match(format) && va.match(format2))
+        var numB = false;
+        
+        var specCharB = false;
+    
+        for (var i = 0; i < va2.length; i++) 
         {
-            return true;
+                for (var j = 0; j < specChar.length; j++) 
+                {
+                    if (va2[i] == specChar[j]) 
+                    {
+                        specCharB = true;
+    
+                        break;
+                    }
+                }
+    
+                if (specCharB) 
+                {
+                    break;
+                }
         }
-
-        else 
-        {
-            return false;
-        }
-
+    
+        if (specCharB) 
+                {
+                    return false;
+                }
+    
+        for (var i = 0; i < va2.length; i++) 
+        {  
+                if (!numB)
+                {
+                    for (var j = 0; j < num.length; j++) 
+                {
+                    if (va2[i]==num[j]) 
+                    {
+                        numB = true;
+    
+                        break;
+                    }   
+                } 
+                }
+                
+                if (!abcB) 
+                {
+                    for (var j = 0; j < num.length; j++) 
+                    {
+                        if (va2[i]==abc[j]) 
+                        {
+                            abcB = true;
+                            break;
+                        }
+                    }
+                }
+                
+                if (numB && abcB) 
+                {
+                    break;
+                }
+            }
+    
+            if (numB && abcB) 
+            {
+                return true;
+            }
+    
+            else 
+            {
+                return false;
+            }
     }
 
     function createCliked(e) 
     {
         e.preventDefault();
 
-        let alert = '';
+        var message = '';
 
-        let newline= '\r\n';
+        var newline= '\r\n';
 
         if (fnB && lnB && dniB && bdateB && pnumberB && addressB && cityB &&
             pcodeB && emailB && passB && rpassB) 
         {
-            // alert += 'All data is correct' + newline + dataCorrect();
+            message += 'All data is correct.' + newline + dataCorrect(message);
 
         }
 
         else 
         {
-            alert += 'Data is incorrec. Please check the next data: .' + newline +
-            dataIncorrect(alert);
+            message += 'Data is incorrect. Please check the next data: .' + newline +
+            dataIncorrect(message);
         }
         
-
-
-        window.alert(alert);
+        window.alert(message);
     }
 
-    function dataIncorrect(alert)
+    function dataIncorrect(message)
     {
         if (!fnB) 
         {
-            alert += 'The first name is incorrect. Please enter only letters and it should be bigger' + 
+           message += 'The first name is incorrect. Please enter only letters and it should be bigger ' + 
             'than three characters.' + newline;
         }
 
-
         if (!lnB) 
         {
-            alert +='The last name is incorrect. Please enter only letters and it should be bigger ' + 
-            'three characters.' + newline;
+            message +='The last name is incorrect. Please enter only letters and it should be bigger ' + 
+            'than three characters.' + newline;
         }
 
         if (!dniB) 
         {
-            alert +='The DNI is incorrect. Please enter only numbers ' + 
+            message +='The DNI is incorrect. Please enter only numbers ' + 
             'and it should have 8 characters.' + newline;
         }
 
         if (!bdateB) 
         {
-            alert +='The Birth date is incorrect. It should have the format dd/mm/yyyy' + newline;
+            message +='The Birth date is incorrect. It should have the format dd/mm/yyyy' + newline;
         }
 
         if (!pnumberB) 
         {
-            alert +='The phone numbeer is incorrect. Please enter at least 5 letters and numbers ' + 
+            message +='The phone numbeer is incorrect. Please enter at least 5 letters and numbers ' + 
             'with a space in the middle' + newline;
         }
 
         if (!addressB) 
         {
-            alert +='The address is incorrect. Please enter only numbers ' + 
+            message +='The address is incorrect. Please enter only numbers ' + 
             'and it should have 8 characters.' + newline;
         }
 
         if (!cityB) 
         {
-            alert +='The city is incorrect. Please enter only letters and numbers ' + 
+            message +='The city is incorrect. Please enter only letters and numbers ' + 
             'and it should have more than 3 characters.' + newline;
         }
 
         if (!pcodeB) 
         {
-            alert +='The postal code is incorrect. Please enter only numbers ' + 
+            message +='The postal code is incorrect. Please enter only numbers ' + 
             'and it should have 4 or 5 digits.' + newline;
         }
 
         if (!emailB) 
         {
-            alert +='The email is invalid. Please enter a valid ' + 
+            message +='The email is invalid. Please enter a valid ' + 
             'email address.' + newline;
         }
 
         if (!passB) 
         {
-            alert +='The password is invalid. Please enter letters and numbers ' + 
+            message +='The password is invalid. Please enter letters and numbers ' + 
             'and it should have at least 8 characters.' + newline;
         }
 
         if (!rpassB) 
         {
-            alert +='The passwords are not the same. Please make sure that the input field ' +
+            message +='The passwords are not the same. Please make sure that the input field ' +
             'Password and Repeat Password are the same' + newline;
         }
-        return alert
+        return message;
     }
     
+    function dataCorrect(message)
+    {
+        message += newline  + 'First Name: ' + document.getElementById('fname').value 
+        + newline + 'Last Name: ' + document.getElementById('lname').value + newline
+        + 'Dni: ' + document.getElementById('dni').value + newline + 'Date of Birth: ' +
+        document.getElementById('bdate').value + newline + 'Phone number: ' +
+        document.getElementById('pnumber').value+ newline + 'Addres: ' +
+        document.getElementById('address').value + newline + 'City: ' +
+        document.getElementById('city').value + newline + 'Postal Code: ' +
+        document.getElementById('pcode').value + newline + 'Email: ' +
+        document.getElementById('email').value + newline + 'Password: ' +
+        document.getElementById('pass').value + newline + 'Repeat Password: ' +
+        document.getElementById('rpass').value;
+
+        return message;
+    }
 }
