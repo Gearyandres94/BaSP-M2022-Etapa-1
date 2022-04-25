@@ -1,109 +1,216 @@
-let email = document.getElementById('email');
+window.onload = function()
+{
+    var num = [0, 1, 2, 3, 4 ,5 ,6 ,7, 8 ,9]
 
-let pass = document.getElementById('pass');
+    var abc= ["a","b","c","d","e","f","g","h","i","j","k","l","m","n",'ñ',"o","p","q","r","s","t","u","v","w","x","y","z"];
 
-let nuserBtn = document.getElementById('nuser');
+    var specChar = ['+', '-','_','@','*'];
 
-let form = document.getElementsByTagName('form');
+    var emailB = false, passB = false;
 
-let loginBtn = document.getElementById('login');
+    var email = document.getElementById('email');
 
-email.addEventListener('focus', focusEventEmail);
+    var pass = document.getElementById('pass');
 
-email.addEventListener('blur', blurEventEmail);
+    var nuserBtn = document.getElementById('nuser');
 
-pass.addEventListener('focus', focusEventPass);
+    var loginBtn = document.getElementById('login');
 
-pass.addEventListener('blur', blurEventPass);
+    email.addEventListener('focus', focusEventEmail);
 
-loginBtn.addEventListener('click', loginClick);
+    email.addEventListener('blur', blurEventEmail);
 
-// nuserBtn.addEventListener('click', nurseBtnClick);
-var va = document.getElementById('email').value;
+    pass.addEventListener('focus', focusEventPass);
 
-function blurEventEmail(){
-    let validate = validateEmail();
+    pass.addEventListener('blur', blurEventPass);
 
-    if (!validate){
-        let b = document.getElementById('emaildiv');
-        b.firstElementChild.textContent='The email is invalid';
-        email.style.backgroundColor='#fa8072';
-    }
-    else {
-        email.style.backgroundColor='#32CD32';
-    }
+    loginBtn.addEventListener('click', loginClick);
 
-}
-
-function focusEventEmail(){
-    let b = document.getElementById('emaildiv');
-    email.style.backgroundColor='#FFF';
-    b.firstElementChild.textContent='';
-}
-
-function blurEventPass(){
-    let validate = validatePass();
-
-    if (!validate){
-        let b = document.getElementById('passdiv');
-
-        b.firstElementChild.textContent='The password is invalid';
-    }
-
-}
-
-function focusEventPass(){
-    let b = document.getElementById('passdiv');
-
-    b.firstElementChild.textContent='';
-}
-
-
-function validateEmail(){
-    let mailformat =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    // nuserBtn.addEventListener('click', nurseBtnClick);
 
     var va = document.getElementById('email').value;
 
-    if (va.match(mailformat)){
-        return true;
+    function blurEventEmail()
+    {
+        if (validateEmail())
+        {
+            email.style.border='2px solid #32CD32';
+            
+            emailB = true;
+        }
+
+        else 
+        {
+            var b = document.getElementById('emaildiv');
+
+            b.firstElementChild.textContent='The email is invalid.';
+
+            email.style.border='2px solid #ffa07a';
+            
+            emailB = false;
+        }
+
     }
 
-    else {
-        return false;
+    function focusEventEmail()
+    {
+        var b = document.getElementById('emaildiv');
+
+        b.firstElementChild.textContent='';
     }
 
-}
+    function blurEventPass()
+    {
+        if (validatePass(document.getElementById('pass').value)){
+            
+            pass.style.border='2px solid #32CD32';
+            
+            passB = true;
+        }
+        else 
+        {
+            var b = document.getElementById('passdiv');
 
+            b.lastElementChild.textContent='The password is invalid';
 
-function validatePass(){
-    let passFormat =/^[A-Za-z]+[0-9]+$/;
+            pass.style.border='2px solid #ffa07a';
 
-    let passva = document.getElementById('pass').value;
+            passB = false;
+        }
 
-    if (passva.match(passFormat)){
-        return true;
     }
 
-    else {
-        return false;
+    function focusEventPass()
+    {
+        var b = document.getElementById('passdiv');
+
+        b.lastElementChild.textContent='';
     }
 
-}
 
-function loginClick(e){
-    let a = validateEmail();
-    let b = validatePass();
-    if (validateEmail() && validatePass()) {
-        window.alert('all is correct');
-    }
-    else if (!validateEmail() && validatePass()){
-        window.alert('The email is invalid');
-    }
-    else if (validateEmail() && !validatePass()){
-        window.alert('TThe password is invalid');
+    function validateEmail(){
+        var mailformat =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        var va = document.getElementById('email').value;
+
+        if (va.match(mailformat)){
+            return true;
+        }
+
+        else {
+            return false;
+        }
+
     }
 
-    else{
-        window.alert('Email and Password are incorrect.');
+
+    function validatePass(va)
+    {
+
+    var abcB = false;
+
+    var numB = false;
+    
+    var specCharB = false;
+
+    for (var i = 0; i < va.length; i++) 
+    {
+            for (let j = 0; j < specChar.length; j++) 
+            {
+                if (va[i] == specChar[j]) 
+                {
+                    specCharB = true;
+
+                    break;
+                }
+            }
+
+            if (specCharB) 
+            {
+                break;
+            }
+    }
+
+    if (specCharB) 
+            {
+                return false;
+            }
+
+    for (var i = 0; i < va.length; i++) 
+    {  
+            if (!numB)
+            {
+                for (let j = 0; j < num.length; j++) 
+            {
+                if (va[i]==num[j]) 
+                {
+                    numB = true;
+
+                    break;
+                }   
+            } 
+            }
+            
+            if (!abcB) 
+            {
+                for (let j = 0; j < num.length; j++) 
+                {
+                    if (va[i]==abc[j]) 
+                    {
+                        abcB = true;
+                        break;
+                    }
+                }
+            }
+            
+            if (numB && abcB) 
+            {
+                break;
+            }
+        }
+
+        if (numB && abcB) 
+        {
+            return true;
+        }
+
+        else 
+        {
+            return false;
+        }
+    }
+
+    function loginClick(e)
+    {
+        e.preventDefault();
+
+        var message = 'The data is ';
+
+        var newline = '\r\n';
+
+        if (emailB && passB)
+        {
+            message += 'correct:' + newline  + 'User email: ' + document.getElementById('email').value 
+            + newline + 'Password: ' + document.getElementById('pass').value;
+
+        }
+
+        else 
+        {
+            message += 'incorrect. Please check the next items: '
+            
+            if (!emailB) 
+            {
+                message += newline + 'User email: Please enter a valid email.'
+            }
+
+            if (!passB) 
+            {
+                message += newline + 'Password: Please enter a valid password. It should contain only' +
+                ' letters and numbers';
+            }
+        }
+
+        window.alert(message);
     }
 }
