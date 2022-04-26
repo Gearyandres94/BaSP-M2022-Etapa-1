@@ -2,17 +2,17 @@
 <html lang="en">
     <head>
         <title>Trackgenix</title>
-        <link rel="stylesheet" href="/semana-06/styles/reset.css">
-        <link rel="stylesheet" href="/semana-06/styles/styles.css">
-        <link rel="stylesheet" href="/semana-06/styles/header.css">
-        <link rel="stylesheet" href="/semana-06/styles/aside.css">
-        <link rel="stylesheet" href="/semana-06/styles/main.css">
-        <link rel="stylesheet" href="/semana-06/styles/footer.css">
+        <link rel="stylesheet" href="../styles/reset.css">
+        <link rel="stylesheet" href="../styles/styles.css">
+        <link rel="stylesheet" href="../styles/header.css">
+        <link rel="stylesheet" href="../styles/aside.css">
+        <link rel="stylesheet" href="../styles/main.css">
+        <link rel="stylesheet" href="../styles/footer.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <meta name="viewport" content="width=440px, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <script src="/javascript/contact.js"></script>
+        <script src="../javascript/contact.js"></script>
     </head>
     <body>
         <div class="flex-wrapper">
@@ -192,20 +192,27 @@
             <section class="contact">
                 <h3>Contact</h3>
                 <form>
-                    <div>
-                        <input type="text" name="name1" placeholder="Name">
-                        <input type="email" id="email" name="email" placeholder="Email">
+                    <div id="form-div">
+                        <div>
+                            <input type="text" id="name" placeholder="Name">
+                            <span></span>
+                        </div>
+                        <div>
+                            <input type="text" id="email" placeholder="Email">
+                            <span></span>
+                        </div>
                     </div>
-                    <label for="contactarea"></label>
-                    <select title="contact-area">
+                    <select title="contact-area" id="select">
                         <option value="">Contact Area</option>
                         <option value="rrhh">RR.HH.</option>
                         <option value="it">I.T.</option>
                         <option value="sales">Sales</option>
-                    </select> 
-                    <textarea name="" rows="5" placeholder="Enter your Message..."></textarea>
+                    </select>
+                    <span></span>
+                    <textarea name="" rows="5" id="text" placeholder="Enter your Message..."></textarea>
+                    <span></span>
                     <div>
-                        <button type="submit">Send Message</button>
+                        <button type="submit" id="send">Send Message</button>
                         <button type="reset">Reset</button>
                     </div>
                 </form>

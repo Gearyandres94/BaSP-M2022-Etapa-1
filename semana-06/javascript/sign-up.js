@@ -101,7 +101,7 @@ window.onload = function()
     function blurEventFname()
     {
         var va = document.getElementById('fname').value;
-
+        
         if (isntNumber(va) && isntSpecChar(va) && va.length > 3)
         {
             fname.style.border='2px solid #32CD32';
@@ -742,7 +742,7 @@ window.onload = function()
 
     function dataIncorrect(message)
     {
-        if (!fnB ) 
+        if (!fnB) 
         {
            message += 'The first name is incorrect. Please enter only letters and it should be bigger ' + 
             'than three characters.' + newline;
