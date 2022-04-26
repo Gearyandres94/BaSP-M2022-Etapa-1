@@ -43,7 +43,7 @@ window.onload = function()
         {
             var b = document.getElementById('emaildiv');
 
-            b.firstElementChild.textContent='The email is invalid.';
+            b.lastElementChild.textContent='The email is invalid.';
 
             email.style.border='2px solid #ffa07a';
             
@@ -56,7 +56,7 @@ window.onload = function()
     {
         var b = document.getElementById('emaildiv');
 
-        b.firstElementChild.textContent='';
+        b.lastElementChild.textContent='';
     }
 
     function blurEventPass()
@@ -110,31 +110,19 @@ window.onload = function()
     var abcB = false;
 
     var numB = false;
-    
-    var specCharB = false;
 
+    
+    //testing for special chars
     for (var i = 0; i < va.length; i++) 
     {
             for (let j = 0; j < specChar.length; j++) 
             {
                 if (va[i] == specChar[j]) 
                 {
-                    specCharB = true;
-
-                    break;
+                    return false;
                 }
             }
-
-            if (specCharB) 
-            {
-                break;
-            }
     }
-
-    if (specCharB) 
-            {
-                return false;
-            }
 
     for (var i = 0; i < va.length; i++) 
     {  
