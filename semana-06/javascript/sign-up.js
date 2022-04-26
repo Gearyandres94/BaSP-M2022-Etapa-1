@@ -398,8 +398,8 @@ window.onload = function()
 
     function blurEventRpass()
     {
-        
-        if (document.getElementById('rpass').value == document.getElementById('pass').value )
+        var va= document.getElementById('rpass').value
+        if (va == document.getElementById('pass').value && validatePass(va))
         {
             rpass.style.border='2px solid #32CD32';
 
@@ -742,7 +742,7 @@ window.onload = function()
 
     function dataIncorrect(message)
     {
-        if (!fnB) 
+        if (!fnB ) 
         {
            message += 'The first name is incorrect. Please enter only letters and it should be bigger ' + 
             'than three characters.' + newline;
