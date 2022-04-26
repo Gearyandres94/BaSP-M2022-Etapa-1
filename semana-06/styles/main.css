@@ -200,9 +200,13 @@ hr:nth-of-type(3){
 
 }
 
-.contact form div input {
+.contact form div div {
+    width: 47%;
+}
+
+.contact form div div input {
     min-width: 350px;
-    width: 48%;
+    width: 47%;
     height: 19px;
     margin-bottom: 10px;
 }

@@ -6,7 +6,7 @@ window.onload = function ()
 
     var specChar = ['+', '-','_','@','*'];
 
-    var nameB = false, emailB=false;
+    var nameB = false, emailB=false, textB=false, selectB=false;
 
     var name = document.getElementById('name');
 
@@ -30,14 +30,17 @@ window.onload = function ()
 
     select.addEventListener('blur', blurEventSelect);
     
-    // text.addEventListener('focus', focusEventText);
+    text.addEventListener('focus', focusEventText);
 
-    // text.addEventListener('blur', blurEventText);
+    text.addEventListener('blur', blurEventText);
         
-    // send.addEventListener('focus', focusEventSend);
+    send.addEventListener('click', ClickedSend);
 
-    // send.addEventListener('blur', blurEventSend);
+    name.required = true;
 
+    email.required = true;
+
+    text.required = true;
 
     function focusEventName()
     {
@@ -107,7 +110,7 @@ window.onload = function ()
 
     function blurEventSelect ()
     {
-        if (select.value=='rrhh' || select.value=='sales' || select.value=='it')
+        if (select.value=='RR.HH.' || select.value=='Sales' || select.value=='I.T.')
         {
             select.style.border='2px solid #32CD32';
 
@@ -122,6 +125,33 @@ window.onload = function ()
             select.style.border='2px solid #ffa07a';
 
             selectB = false;
+        }
+    }
+
+    function focusEventText()
+    { 
+        var b = text.nextElementSibling;
+
+        b.textContent='';   
+    }
+
+    function blurEventText ()
+    {
+        if (text.value.length > 3)
+        {
+            text.style.border='2px solid #32CD32';
+
+            textB = true;
+        }
+        else 
+        {
+            var b = text.nextElementSibling;
+
+            b.textContent='The message must to be longer';
+
+            text.style.border='2px solid #ffa07a';
+
+            textB = false;
         }
     }
 
@@ -214,5 +244,65 @@ window.onload = function ()
             return true;
         }
     }
+    function ClickedSend(e) 
+    {
+        e.preventDefault();
 
+        var message = '';
+
+        var newline= '\r\n';
+
+        if (nameB && emailB && textB && selectB) 
+        {
+            message += 'Message sent' + newline + 'Data introduced: '+ dataCorrect(message);
+
+        }
+
+        else 
+        {
+            message += 'Message could not be sent. Please check the next Items: .' + newline +
+            dataIncorrect(message);
+        }
+        
+        window.alert(message);
+    }
+
+    function dataIncorrect(message)
+    {
+        var newline= '\r\n';
+
+        if (!name) 
+        {
+           message += 'The Name is incorrect. Please enter only letters and it should be bigger ' + 
+            'than three characters.' + newline;
+        }
+
+        if (!emailB) 
+        {
+            message +='The email is invalid. Please enter a valid email address.'+ newline;
+        }
+
+        if (!selectB) 
+        {
+            message +='You must select something' + newline;
+        }
+
+        if (!textB) 
+        {
+            message +='The message must be longer and it can not be empty.' + newline;
+        }
+
+        return message;
+    }
+    
+    function dataCorrect(message)
+    {
+        var newline= '\r\n';
+        message += newline  + 'Name: ' + document.getElementById('name').value 
+        + newline + 'Email Address: ' + document.getElementById('email').value + newline + 'Section: ' +
+        document.getElementById('select').value + newline + 'message: ' +
+        document.getElementById('text').value;
+
+        return message;
+    }
 }
