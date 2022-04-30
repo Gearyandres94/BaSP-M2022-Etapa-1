@@ -39,6 +39,8 @@ window.onload = function()
 
     addeventListener2();
 
+    fillValues();
+
     function addeventListener1()
     {
         fname.addEventListener('focus', focusEventFname);
@@ -204,7 +206,8 @@ window.onload = function()
         {
             var b = document.getElementById('bdateDiv');
     
-            b.lastElementChild.textContent='The date is invalid. Please follow dd/mm/yyyy';
+            b.lastElementChild.textContent='The date is invalid. Please follow dd/mm/yyyy and it should be '
+            + 'be 18 years lesser than the actual date';
     
             bdate.style.border='2px solid #ffa07a';
 
@@ -531,9 +534,9 @@ window.onload = function()
 
         var parts = va.split("/");
 
-        var day = parseInt(parts[0], 10);
+        var month = parseInt(parts[0], 10);
 
-        var month = parseInt(parts[1], 10);
+        var day = parseInt(parts[1], 10);
 
         var year = parseInt(parts[2], 10);
 
@@ -727,17 +730,16 @@ window.onload = function()
         if (fnB && lnB && dniB && bdateB && pnumberB && addressB && cityB &&
             pcodeB && emailB && passB && rpassB) 
         {
-            message += 'All data is correct.' + newline + dataCorrect(message);
-
+            message += 'Data is correct. Request sent';
+            sendRqst();
         }
 
         else 
         {
-            message += 'Data is incorrect. Please check the next data: .' + newline +
+            message += 'Data is incorrect. Request could not be sent Please check the next data: .' + newline +
             dataIncorrect(message);
         }
-        
-        window.alert(message);
+     window.alert(message);  
     }
 
     function dataIncorrect(message)
@@ -762,7 +764,8 @@ window.onload = function()
 
         if (!bdateB) 
         {
-            message +='The Birth date is incorrect. It should have the format dd/mm/yyyy' + newline;
+            message +='The Birth date is incorrect. It should have the format mm/dd/yyyy and it should ' +
+            'be 18 years lesser than the actual date' + newline;
         }
 
         if (!pnumberB) 
@@ -806,23 +809,71 @@ window.onload = function()
             message +='The passwords are not the same. Please make sure that the input field ' +
             'Password and Repeat Password are the same' + newline;
         }
-        return message;
+
     }
     
-    function dataCorrect(message)
-    {
-        message += newline  + 'First Name: ' + document.getElementById('fname').value 
-        + newline + 'Last Name: ' + document.getElementById('lname').value + newline
-        + 'Dni: ' + document.getElementById('dni').value + newline + 'Date of Birth: ' +
-        document.getElementById('bdate').value + newline + 'Phone number: ' +
-        document.getElementById('pnumber').value+ newline + 'Addres: ' +
-        document.getElementById('address').value + newline + 'City: ' +
-        document.getElementById('city').value + newline + 'Postal Code: ' +
-        document.getElementById('pcode').value + newline + 'Email: ' +
-        document.getElementById('email').value + newline + 'Password: ' +
-        document.getElementById('pass').value + newline + 'Repeat Password: ' +
-        document.getElementById('rpass').value;
+}
 
-        return message;
-    }
+function sendRqst() 
+{
+    const usp = new URLSearchParams (
+        {
+            name : fname.value,
+            lastName : lname.value,
+            dni: dni.value,
+            dob: bdate.value,
+            phone: pnumber.value,
+            address: address.value,
+            city: city.value,
+            zip : pcode.value,
+            email : email.value,
+            password : pass.value
+        }
+    );
+
+    const request = 'https://basp-m2022-api-rest-server.herokuapp.com/signup?'+ usp;
+    
+    fetch (request)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(responseJson) {
+        if(responseJson.success){
+            window.alert('Request successful\n' + responseJson.msg);
+            localStrg();
+        } else{
+           window.alert('Error\n' + responseJson.msg);
+        }
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
+}
+
+function localStrg() 
+{
+    localStorage.setItem('firstName', fname.value);
+    localStorage.setItem('lastName', lname.value);
+    localStorage.setItem('dni', dni.value);
+    localStorage.setItem('dateOfBirth', bdate.value);
+    localStorage.setItem('phone', pnumber.value);
+    localStorage.setItem('address', address.value);
+    localStorage.setItem('city', city.value);
+    localStorage.setItem('zip', pcode.value);
+    localStorage.setItem('email', email.value);
+    localStorage.setItem('password', pass.value);
+}
+
+function fillValues()
+{
+    fname.value = localStorage.getItem('firstName');
+    lname.value = localStorage.getItem('lastName');
+    dni.value = localStorage.getItem('dni');
+    bdate.value = localStorage.getItem('dateOfBirth');
+    pnumber.value = localStorage.getItem('phone');
+    address.value = localStorage.getItem('address');
+    city.value = localStorage.getItem('city');
+    pcode.value = localStorage.getItem('zip');
+    email.value = localStorage.getItem('email');
+    pass.value = localStorage.getItem('password');
 }
