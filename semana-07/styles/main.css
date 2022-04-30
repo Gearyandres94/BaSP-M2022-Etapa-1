@@ -1,0 +1,388 @@
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flex-wrapper .green-bar{
+    width: 100%;
+    margin: 16px 0px;
+    border-bottom: solid 6px #aace9b;
+}
+
+section {
+    width: 100%;
+}
+
+/*title section*/
+
+.title {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+}
+
+.title img{
+    width:350px;
+    margin-bottom: 10px;
+}
+
+.title div {
+    display: flex;
+    max-width: 540px;
+}
+
+.title div div {
+    min-width: 350px;
+    max-width: 540px;
+    margin:0px 0px 35px 0px;
+}
+
+.title div div h2 {
+    margin: 13px 0px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.title button {
+    width: 165px;
+    height:50px
+}
+
+/*hr */
+
+div main hr {
+    margin: 31px 0px;
+    width: 100%;
+    
+}
+
+/*features section*/
+
+.features {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.features h3{
+    width: 100%;
+}
+
+.features div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}   
+
+.features div .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    max-width: 350px;
+}
+
+.features div .container .image-container {
+    position: relative;
+    overflow:hidden;
+    width:94px;
+    height:95px;
+    align-self: stretch;
+    margin:30px;
+    border-radius: 3px;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -webkit-box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, .05);
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, .05);
+}
+
+.image-container img { 
+    transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.features .container div:last-of-type {
+    width: 50%;
+    flex-grow: 2;
+    margin-bottom: 32px;
+}
+
+.features .container div:last-of-type h4{
+    margin-bottom: 16px;
+}
+
+/*why section*/
+
+.why {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.why h3 {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.why article {
+    max-width: 350px;
+    padding-right: 11px; 
+    margin-left: 11px;
+    margin-bottom:32px;
+}
+
+.why article img{
+    width:350px;
+    margin-bottom: 16px;
+}
+
+
+.why h4 {
+    margin-bottom: 7px;
+}
+
+.why article:first-of-type {
+    margin-left: 0px;
+}
+.why article:nth-of-type(2) {
+    padding-right: 0px;
+}
+
+.why article:last-of-type {
+    padding-right: 0px;
+}
+
+hr:nth-of-type(3){
+    margin-top: 0px;
+}
+
+/*contact section*/
+
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+ 
+.contact h3 {
+    width: 100%;
+    text-decoration: underline;
+    margin-bottom: 15px;
+}
+
+.contact form {
+    width: 100%;
+    min-width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact form div:first-of-type  {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    margin: 0px 0px 10px 0px;
+
+}
+
+.contact form div div {
+    width: 47%;
+}
+
+.contact form div div input {
+    min-width: 350px;
+    width: 47%;
+    height: 19px;
+    margin-bottom: 10px;
+}
+
+.contact form div input:last-of-type {
+    margin:0px;
+}
+
+.contact form select {
+    min-width: 350px;
+    width: 49%;
+    height: 19px;
+    margin-bottom: 19px;
+}
+
+.contact form textarea {
+    min-width: 350px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.contact form div:last-of-type{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0px;
+}
+
+.contact form button {
+    min-width: 160px;
+    background: #AACE9B;
+    margin-right: 15px;
+    border-radius: 5px;
+    color: #373867;
+}
+
+/*history section*/
+
+.history {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.history h3 {
+    width: 100%;
+    text-decoration: underline;
+    margin-bottom: 21px;
+}
+
+.history h4 {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.history p {
+    flex-grow: 2;
+    margin-bottom: 16px;
+}
+
+.history div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.history div img {
+    width: 350px;
+    margin-bottom: 16px;
+}
+
+.history div p  {
+    min-width: 350px;
+    max-width: 750px;
+    width:48%;
+}
+
+.history div:last-of-type {
+    flex-wrap: wrap-reverse;
+}
+
+hr:nth-of-type(5){
+    margin-top: 16px;
+}
+
+/*products section */
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.products div {
+    min-width: 350px;
+   
+}
+
+.products div h3 {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.products div:first-of-type  h3{
+    margin-top: 0px;
+}
+
+.products div ol {
+    width: 100%;
+}
+
+.products div li {
+    width: 100%;
+    margin-left: 10px;
+    list-style-type:decimal;
+    list-style-position: inside;
+}
+
+.products div:last-of-type {
+    margin-bottom: 0px;
+}
+
+/*Media queries*/
+
+@media (min-width:768px) {
+
+    .title{
+        text-align: left;
+    }
+
+    .title img {
+        width:536px;
+    }
+
+    .why article:first-of-type {
+        margin-left: 11px;
+        border-right: 1px solid #373867;
+    }
+
+    .why article:nth-of-type(3) {
+        border-right: 1px solid #373867;
+    }
+
+    .products {
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .products h3{
+        text-align: left;
+    }
+    
+}
+@media (min-width:1440px) {
+    .title img {
+        margin-left: auto;
+    }
+
+    .features div .container {
+        max-width: 525px;
+    }
+
+    .why article {
+        width:250px;
+    }
+
+    .why article img {
+        width:250px;
+    }
+
+    .why article:nth-of-type(2) {
+        padding-right: 11px;
+        border-right: 1px solid #373867;
+    }
+}
