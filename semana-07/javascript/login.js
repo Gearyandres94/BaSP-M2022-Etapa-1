@@ -137,7 +137,7 @@ window.onload = function()
             
             if (!abcB) 
             {
-                for (let j = 0; j < num.length; j++) 
+                for (let j = 0; j < abc.length; j++) 
                 {
                     if (va[i]==abc[j]) 
                     {
@@ -208,19 +208,15 @@ function sendRqst()
 
     const request = 'https://basp-m2022-api-rest-server.herokuapp.com/login?'+ usp;
     
-    fetch (request)
-    .then(function(response) {
-        return response.json();
+    fetch(request)
+    .then(function (response) {
+      return response.json()
     })
-    .then(function(responseJson) {
-        if(responseJson.success){
-            alert('Request successful\n' + responseJson.msg);
-        } else{
-            alert('Error\n' + responseJson.msg);
-        }
+    .then(function (response) {
+      alert(response.msg)
     })
-    .catch(function(error) {
-        console.log(error);
-    });
-}
+    .catch(function (responseError) {
+      alert(responseError.errors[0].msg)
+    })
 
+}

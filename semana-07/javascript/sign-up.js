@@ -536,7 +536,7 @@ window.onload = function()
 
         var month = parseInt(parts[0], 10);
 
-        var day = parseInt(parts[1], 10);
+        var day= parseInt(parts[1], 10);
 
         var year = parseInt(parts[2], 10);
 
@@ -736,7 +736,7 @@ window.onload = function()
 
         else 
         {
-            message += 'Data is incorrect. Request could not be sent Please check the next data: .' + newline +
+            message += 'Data is incorrect. Request could not be sent Please check the next data: ' + newline +
             dataIncorrect(message);
         }
      window.alert(message);  
@@ -809,6 +809,7 @@ window.onload = function()
             message +='The passwords are not the same. Please make sure that the input field ' +
             'Password and Repeat Password are the same' + newline;
         }
+        return message;
 
     }
     
@@ -836,17 +837,22 @@ function sendRqst()
     fetch (request)
     .then(function(response) {
         return response.json();
+        
     })
     .then(function(responseJson) {
-        if(responseJson.success){
-            window.alert('Request successful\n' + responseJson.msg);
-            localStrg();
-        } else{
-           window.alert('Error\n' + responseJson.msg);
-        }
+
+        if (responseJson.success)
+            {
+                window.alert('Request successful\n' + responseJson.msg);
+                localStrg();
+            }
+            else {
+                throw new Error('todo se fue al demonio');
+            }
     })
     .catch(function(error) {
-        console.log(error);
+        console.log(responseError.errors)
+        alert("")
     });
 }
 
@@ -876,4 +882,5 @@ function fillValues()
     pcode.value = localStorage.getItem('zip');
     email.value = localStorage.getItem('email');
     pass.value = localStorage.getItem('password');
+    rpass.value = localStorage.getItem('password');
 }

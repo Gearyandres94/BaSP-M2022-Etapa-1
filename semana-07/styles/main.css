@@ -190,57 +190,74 @@ hr:nth-of-type(3){
     flex-wrap: wrap;
 }
 
-.contact form div:first-of-type  {
+.contact form div {
     width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.contact form span {
+    width: 100%;
+    text-align: left;
+    margin: 10px 0px;
+}
+
+.contact form div:nth-of-type(2) {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
     justify-content: flex-start;
-    margin: 0px 0px 10px 0px;
-
+    width:100%;
 }
 
-.contact form div div {
-    width: 47%;
-}
-
-.contact form div div input {
-    min-width: 350px;
-    width: 47%;
-    height: 19px;
-    margin-bottom: 10px;
-}
-
-.contact form div input:last-of-type {
-    margin:0px;
-}
-
-.contact form select {
-    min-width: 350px;
-    width: 49%;
-    height: 19px;
-    margin-bottom: 19px;
-}
-
-.contact form textarea {
-    min-width: 350px;
-    width: 100%;
-    margin-bottom: 10px;
+.contact form div:nth-of-type(3){
+    display:flex ;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .contact form div:last-of-type{
     display: flex;
     justify-content: flex-start;
-    width: 100%;
-    margin: 0px;
 }
 
-.contact form button {
+.contact form div button {
     min-width: 160px;
     background: #AACE9B;
     margin-right: 15px;
     border-radius: 5px;
     color: #373867;
+}
+
+#form-div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0px 0px;
+}
+
+#form-div div {
+    min-width: 350px;
+    width:48%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0px 3px;
+}
+
+#form-div div input {
+    width: 100%;
+}
+
+
+#select {
+    width: 49%;
+    min-width: 350px;
+}
+
+#text {
+    width: 96%;
+    min-width: 350px;
 }
 
 /*history section*/
