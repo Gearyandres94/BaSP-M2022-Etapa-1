@@ -22,61 +22,59 @@ window.onload = function()
 
     pass.addEventListener('blur', blurEventPass);
 
-    loginBtn.addEventListener('click', loginClick);
-
-    var va = document.getElementById('email').value;
+    loginBtn.addEventListener('click', loginClick); 
 
     function blurEventEmail()
+{
+    if (validateEmail())
     {
-        if (validateEmail())
-        {
-            email.style.border='2px solid #32CD32';
-            
-            emailB = true;
-        }
-
-        else 
-        {
-            var b = document.getElementById('emaildiv');
-
-            b.lastElementChild.textContent='The email is invalid.';
-
-            email.style.border='2px solid #ffa07a';
-            
-            emailB = false;
-        }
-
+        email.style.border='2px solid #32CD32';
+        
+        emailB = true;
     }
 
-    function focusEventEmail()
+    else 
     {
         var b = document.getElementById('emaildiv');
 
-        b.lastElementChild.textContent='';
+        b.lastElementChild.textContent='The email is invalid.';
+
+        email.style.border='2px solid #ffa07a';
+        
+        emailB = false;
     }
 
-    function blurEventPass()
+}
+
+function focusEventEmail()
+{
+    var b = document.getElementById('emaildiv');
+
+    b.lastElementChild.textContent='';
+}
+
+function blurEventPass()
+{
+    if (validatePass())
     {
-        if (validatePass(document.getElementById('pass').value)){
-            
-            pass.style.border='2px solid #32CD32';
-            
-            passB = true;
-        }
-        else 
-        {
-            var b = document.getElementById('passdiv');
+        pass.style.border='2px solid #32CD32';
+        
+        passB = true;
+    }
+    else 
+    {
+        var b = document.getElementById('passdiv');
 
-            b.lastElementChild.textContent='The password is invalid';
+        b.lastElementChild.textContent='The password is invalid';
 
-            pass.style.border='2px solid #ffa07a';
+        pass.style.border='2px solid #ffa07a';
 
-            passB = false;
-        }
-
+        passB = false;
     }
 
-    function focusEventPass()
+}
+
+function focusEventPass()
     {
         var b = document.getElementById('passdiv');
 
@@ -87,9 +85,9 @@ window.onload = function()
     function validateEmail(){
         var mailformat =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-        var va = document.getElementById('email').value;
+        var vm = document.getElementById('email').value;
 
-        if (va.match(mailformat)){
+        if (vm.match(mailformat)){
             return true;
         }
 
@@ -100,68 +98,69 @@ window.onload = function()
     }
 
 
-    function validatePass(va)
+    function validatePass()
     {
+        va= document.getElementById('pass').value;
 
-    var abcB = false;
+        var abcB = false;
 
-    var numB = false;
+        var numB = false;
 
-    
-    //testing for special chars
-    for (var i = 0; i < va.length; i++) 
-    {
-            for (let j = 0; j < specChar.length; j++) 
-            {
-                if (va[i] == specChar[j]) 
+        
+        //testing for special chars
+        for (var i = 0; i < va.length; i++) 
+        {
+                for (let j = 0; j < specChar.length; j++) 
                 {
-                    return false;
-                }
-            }
-    }
-
-    for (var i = 0; i < va.length; i++) 
-    {  
-            if (!numB)
-            {
-                for (let j = 0; j < num.length; j++) 
-            {
-                if (va[i]==num[j]) 
-                {
-                    numB = true;
-
-                    break;
-                }   
-            } 
-            }
-            
-            if (!abcB) 
-            {
-                for (let j = 0; j < abc.length; j++) 
-                {
-                    if (va[i]==abc[j]) 
+                    if (va[i] == specChar[j]) 
                     {
-                        abcB = true;
-                        break;
+                        return false;
                     }
                 }
+        }
+
+        for (var i = 0; i < va.length; i++) 
+        {  
+                if (!numB)
+                {
+                    for (let j = 0; j < num.length; j++) 
+                {
+                    if (va[i]==num[j]) 
+                    {
+                        numB = true;
+
+                        break;
+                    }   
+                } 
+                }
+                
+                if (!abcB) 
+                {
+                    for (let j = 0; j < abc.length; j++) 
+                    {
+                        if (va[i]==abc[j]) 
+                        {
+                            abcB = true;
+                            break;
+                        }
+                    }
+                }
+                
+                if (numB && abcB) 
+                {
+                    break;
+                }
             }
-            
+
             if (numB && abcB) 
             {
-                break;
+                return true;
             }
-        }
 
-        if (numB && abcB) 
-        {
-            return true;
-        }
-
-        else 
-        {
-            return false;
-        }
+            else 
+            {
+                return false;
+            }
     }
 
     function loginClick(e)
@@ -174,13 +173,13 @@ window.onload = function()
 
         if (emailB && passB)
         {
-           sendRqst();
+            sendRqst();
         }
 
         else 
         {
-            message += 'incorrect. Please check the next items: '
-            
+             message += 'incorrect. Please check the next items: '
+                
             if (!emailB) 
             {
                 message += newline + 'User email: Please enter a valid email.'
@@ -188,13 +187,14 @@ window.onload = function()
 
             if (!passB) 
             {
-                message += newline + 'Password: Please enter a valid password. It should contain only' +
-                ' letters and numbers';
+                    message += newline + 'Password: Please enter a valid password. It should contain only' +
+                    ' letters and numbers';
+                }
+                alert(message);
             }
-            alert(message);
-        }
   
     }
+
 }
 
 function sendRqst() 
@@ -209,14 +209,18 @@ function sendRqst()
     const request = 'https://basp-m2022-api-rest-server.herokuapp.com/login?'+ usp;
     
     fetch(request)
-    .then(function (response) {
-      return response.json()
-    })
-    .then(function (response) {
-      alert(response.msg)
-    })
-    .catch(function (responseError) {
-      alert(responseError.errors[0].msg)
-    })
-
+        .then(function (response) {
+           
+            return response.json();
+        })
+        .then(function (response) {
+            if(!response.success){
+                throw new Error (response.msg)
+            }
+            alert('Request Succesful');
+            alert(response.msg);
+        })
+        .catch(error=> {
+          alert('there has been a problem.' + '\n' +  error);
+        })
 }

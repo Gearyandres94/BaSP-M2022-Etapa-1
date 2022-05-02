@@ -29,11 +29,11 @@ window.onload = function()
     var rpass= document.getElementById('rpass');
 
     var create= document.getElementById('create');
-
+    
     var fnB = false, lnB = false, dniB = false, bdateB = false, pnumberB = false,
     addressB = false, cityB = false, emailB = false, pcodeB = false, passB = false, rpassB = false; 
     
-    var newline= '\r\n';
+
      
     addeventListener1();
 
@@ -206,8 +206,8 @@ window.onload = function()
         {
             var b = document.getElementById('bdateDiv');
     
-            b.lastElementChild.textContent='The date is invalid. Please follow dd/mm/yyyy and it should be '
-            + 'be 18 years lesser than the actual date';
+            b.lastElementChild.textContent='The date is invalid. Please follow mm/dd/yyyy and it should be '
+            + 'be 18 years or more before than today';
     
             bdate.style.border='2px solid #ffa07a';
 
@@ -513,17 +513,9 @@ window.onload = function()
 
     function validateBdate(va)
     {
-        for (let i = 0; i < va.length; i++) 
+        if (va[2]!='/'&& va[5]!='/')
         {
-            if (i == 2 || i==5)
-            {
-                if(va[i]!='/')
-                {
-                    return false
-                }
-
-            }
-            
+            return false
         }
 
         if (isNaN(va[0]) || isNaN(va[1]) || isNaN(va[3]) || isNaN(va[4]) || isNaN(va[6]) ||
@@ -536,7 +528,7 @@ window.onload = function()
 
         var month = parseInt(parts[0], 10);
 
-        var day= parseInt(parts[1], 10);
+        var day = parseInt(parts[1], 10);
 
         var year = parseInt(parts[2], 10);
 
@@ -730,19 +722,25 @@ window.onload = function()
         if (fnB && lnB && dniB && bdateB && pnumberB && addressB && cityB &&
             pcodeB && emailB && passB && rpassB) 
         {
-            message += 'Data is correct. Request sent';
-            sendRqst();
+            message += 'Data is correct' + newline + '\r\n Request Sent.'
+            showModal("Data Correct", '<p>'+ message +'</p>',
+            [ { label: "Ok", onclick: modal =>{}, triggerClose:true }]);
+
+             sendRqst(newline);
         }
 
         else 
         {
             message += 'Data is incorrect. Request could not be sent Please check the next data: ' + newline +
-            dataIncorrect(message);
+            dataIncorrect(message,newline);
+            showModal("Data Incorrect", '<p>'+ message +'</p>',
+            [ { label: "Ok", onclick: modal =>{}, triggerClose:true }]);
         }
-     window.alert(message);  
+
+        
     }
 
-    function dataIncorrect(message)
+    function dataIncorrect(message,newline)
     {
         if (!fnB) 
         {
@@ -813,48 +811,112 @@ window.onload = function()
 
     }
     
-}
-
-function sendRqst() 
-{
-    const usp = new URLSearchParams (
-        {
-            name : fname.value,
-            lastName : lname.value,
-            dni: dni.value,
-            dob: bdate.value,
-            phone: pnumber.value,
-            address: address.value,
-            city: city.value,
-            zip : pcode.value,
-            email : email.value,
-            password : pass.value
-        }
-    );
-
-    const request = 'https://basp-m2022-api-rest-server.herokuapp.com/signup?'+ usp;
-    
-    fetch (request)
-    .then(function(response) {
-        return response.json();
-        
-    })
-    .then(function(responseJson) {
-
-        if (responseJson.success)
+    function sendRqst(newline) 
+    {
+        const usp = new URLSearchParams (
             {
-                window.alert('Request successful\n' + responseJson.msg);
-                localStrg();
+                name : fname.value,
+                lastName : lname.value,
+                dni: dni.value,
+                dob: bdate.value,
+                phone: pnumber.value,
+                address: address.value,
+                city: city.value,
+                zip : pcode.value,
+                email : email.value,
+                password : pass.value
             }
-            else {
-                throw new Error('todo se fue al demonio');
+        );
+    
+        const request = 'https://basp-m2022-api-rest-server.herokuapp.com/signup?'+ usp;
+        
+        fetch (request)
+        .then(function(response) 
+        {
+            return response.json();
+            
+        })
+        .then(function(response) 
+        {
+            if (!response.success)
+            {
+                var unifiedError = '';
+    
+                console.log (response.errors.length)
+    
+                for (var i =0; i<response.errors.length; i++)
+                {
+                    unifiedError += '\n' + response.errors[i].msg 
+                }
+    
+                throw new Error(unifiedError);
+                    
             }
-    })
-    .catch(function(error) {
-        console.log(responseError.errors)
-        alert("")
-    });
+
+            showModal("Request succesful", '<p>'+ response.msg +'</p>',
+            [ { label: "Ok", onclick: modal =>{}, triggerClose:true }]);
+            localStrg();
+        })
+
+        .catch(error=> 
+        {
+            alert(  'Error in Request.' + '\r\n' +  error);
+        });
+    } 
+        function showModal(titleHtml, contentHtml, buttons)
+    {
+        const modal = document.createElement("div");
+
+        modal.classList.add("modal");
+        modal.innerHTML = `
+            <div class="modal__inner">
+                <div class="modal__top">
+                    <div class="modal__title">${titleHtml}</div>
+                    <button class="modal__close" type="button">
+                        <span class="material-icons">
+                            close
+                        </span>
+                    </button>
+                </div>
+                <div class="modal__content">${contentHtml}</div>
+                <div class="modal__bottom"></div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        for (const button of buttons) 
+        {
+            const element = document.createElement('button');
+
+            element.setAttribute('type','button');
+
+            element.classList.add('modal__button');
+
+            element.textContent = button.label;
+
+            element.addEventListener('click', () =>
+            {
+                if (button.triggerClose) {
+                    document.body.removeChild(modal);
+                }
+
+                button.onclick(modal);
+
+            })
+
+            modal.querySelector(".modal__close").addEventListener('click', () =>
+            {
+                document.body.removeChild(modal);
+            });
+
+            modal.querySelector('.modal__bottom').appendChild(element);
+
+        }
+    }
+
 }
+
+
+
 
 function localStrg() 
 {
@@ -884,3 +946,4 @@ function fillValues()
     pass.value = localStorage.getItem('password');
     rpass.value = localStorage.getItem('password');
 }
+
