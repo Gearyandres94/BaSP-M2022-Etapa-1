@@ -12,7 +12,8 @@ Trackgenix is a time tracking and team management web application.  This app is 
 ### semana-02
 - Created Html based on a figma design.
 ### semana-03
-- Created several css files to give a style to the html created in semana-02. This style is not responsive and doesn't use flexbox. This design should be executed in a browser with a windows width of 1440px.
+- Created several css files to give a style to the html created in semana-02. This style is not responsive and doesn't use flexbox. 
+This design should be executed in a browser with a windows width of 1440px.
 ### semana-04
 - The style is now responsive and it has flexbox. Works in 440px(mobile), 768px(tablet), 1440px(desktop) resolutions. 
 Github pages link: https://gearyandres94.github.io/BaSP-M2022-Etapa-1/semana-04/index.html
@@ -22,6 +23,10 @@ Github pages link: https://gearyandres94.github.io/BaSP-M2022-Etapa-1/semana-05/
 ### semana-06
 - Sign-up and Login pages added. All validations of forms done with javascript.
 Github pages link: https://gearyandres94.github.io/BaSP-M2022-Etapa-1/semana-06/views/
+### semana-07
+- The signup and login forms now they request to an api and received a response with fetch(), the data in sign-up 
+is stored in  the local storage, and the alerts for the forms were replaced with modal windows. 
+Github pages link: https://gearyandres94.github.io/BaSP-M2022-Etapa-1/semana-07/views/
 
 ## Contact Info
 E-mail: gearyandres@gmail.com
