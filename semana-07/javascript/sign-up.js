@@ -32,9 +32,7 @@ window.onload = function()
     
     var fnB = false, lnB = false, dniB = false, bdateB = false, pnumberB = false,
     addressB = false, cityB = false, emailB = false, pcodeB = false, passB = false, rpassB = false; 
-    
 
-     
     addeventListener1();
 
     addeventListener2();
@@ -715,14 +713,14 @@ window.onload = function()
     {
         e.preventDefault();
 
-        var message = '';
+        var message='';
 
-        var newline= '\r\n';
+        var newline= '\u000d '+'\u000a';
 
         if (fnB && lnB && dniB && bdateB && pnumberB && addressB && cityB &&
             pcodeB && emailB && passB && rpassB) 
         {
-            message += 'Data is correct' + newline + '\r\n Request Sent.'
+            message += 'Data is correct' +'<p>' + 'Request Sent.'+'</p>'
             showModal("Data Correct", '<p>'+ message +'</p>',
             [ { label: "Ok", onclick: modal =>{}, triggerClose:true }]);
 
@@ -731,8 +729,10 @@ window.onload = function()
 
         else 
         {
-            message += 'Data is incorrect. Request could not be sent Please check the next data: ' + newline +
+            message += '<p>' + 'Data is incorrect.'+'</p>' + '<p>' + 'Request could not be sent.'+'</p>'+ 
+            '<p>' + 'Please check the next data:' +'</p>' +
             dataIncorrect(message,newline);
+
             showModal("Data Incorrect", '<p>'+ message +'</p>',
             [ { label: "Ok", onclick: modal =>{}, triggerClose:true }]);
         }
@@ -744,68 +744,68 @@ window.onload = function()
     {
         if (!fnB) 
         {
-           message += 'The first name is incorrect. Please enter only letters and it should be bigger ' + 
-            'than three characters.' + newline;
+           message += '<p>' + 'The first name is incorrect. Please enter only letters and it should be bigger ' + 
+            'than three characters.' + '</p>';
         }
 
         if (!lnB) 
         {
-            message +='The last name is incorrect. Please enter only letters and it should be bigger ' + 
-            'than three characters.' + newline;
+            message +='<p>' + 'The last name is incorrect. Please enter only letters and it should be bigger ' + 
+            'than three characters.' + '</p>';
         }
 
         if (!dniB) 
         {
-            message +='The DNI is incorrect. Please enter only numbers ' + 
-            'and it should have 8 characters.' + newline;
+            message +='<p>' + 'The DNI is incorrect. Please enter only numbers ' + 
+            'and it should have 8 characters.' + '</p>';
         }
 
         if (!bdateB) 
         {
-            message +='The Birth date is incorrect. It should have the format mm/dd/yyyy and it should ' +
-            'be 18 years lesser than the actual date' + newline;
+            message +='<p>' + 'The Birth date is incorrect. It should have the format mm/dd/yyyy and it should ' +
+            'be 18 years lesser than the actual date' + '</p>';
         }
 
         if (!pnumberB) 
         {
-            message +='The phone numbeer is incorrect. Please enter at least 5 letters and numbers ' + 
-            'with a space in the middle' + newline;
+            message +='<p>' + 'The phone numbeer is incorrect. Please enter at least 5 letters and numbers ' + 
+            'with a space in the middle' + '</p>';
         }
 
         if (!addressB) 
         {
-            message +='The address is incorrect. Please enter only numbers ' + 
-            'and it should have 8 characters.' + newline;
+            message +='<p>' + 'The address is incorrect. Please enter only numbers ' + 
+            'and it should have 8 characters.' + '</p>';
         }
 
         if (!cityB) 
         {
-            message +='The city is incorrect. Please enter only letters and numbers ' + 
-            'and it should have more than 3 characters.' + newline;
+            message +='<p>' + 'The city is incorrect. Please enter only letters and numbers ' + 
+            'and it should have more than 3 characters.' + '</p>';
         }
 
         if (!pcodeB) 
         {
-            message +='The postal code is incorrect. Please enter only numbers ' + 
-            'and it should have 4 or 5 digits.' + newline;
+            message +='<p>' + 'The postal code is incorrect. Please enter only numbers ' + 
+            'and it should have 4 or 5 digits.' + '</p>';
         }
 
         if (!emailB) 
         {
-            message +='The email is invalid. Please enter a valid ' + 
-            'email address.' + newline;
+            message += '<p>' + 'The email is invalid. Please enter a valid ' + 
+            'email address.'+ '</p>';
         }
 
         if (!passB) 
         {
-            message +='The password is invalid. Please enter letters and numbers ' + 
-            'and it should have at least 8 characters.' + newline;
+            message +='<p>'+'The password is invalid. Please enter letters and numbers ' + 
+            'and it should have at least 8 characters.' + '</p>';
         }
 
         if (!rpassB) 
         {
-            message +='The passwords are not the same. Please make sure that the input field ' +
-            'Password and Repeat Password are the same' + newline;
+            message +='<p>'+'The passwords are not the same. Please make sure that the input field ' +
+            'Password and Repeat Password are the same.' + '</p>';
         }
         return message;
 
@@ -856,6 +856,7 @@ window.onload = function()
             showModal("Request succesful", '<p>'+ response.msg +'</p>',
             [ { label: "Ok", onclick: modal =>{}, triggerClose:true }]);
             localStrg();
+            
         })
 
         .catch(error=> 
@@ -863,6 +864,9 @@ window.onload = function()
             alert(  'Error in Request.' + '\r\n' +  error);
         });
     } 
+
+    //function Modal Windows
+
         function showModal(titleHtml, contentHtml, buttons)
     {
         const modal = document.createElement("div");

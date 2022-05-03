@@ -55,7 +55,7 @@ function focusEventEmail()
 
 function blurEventPass()
 {
-    if (validatePass())
+    if (validatePass() && pass.value.length>7)
     {
         pass.style.border='2px solid #32CD32';
         
@@ -65,7 +65,7 @@ function blurEventPass()
     {
         var b = document.getElementById('passdiv');
 
-        b.lastElementChild.textContent='The password is invalid';
+        b.lastElementChild.textContent='The password is invalid. It should be longer than 7 chars and needs letters and numbers';
 
         pass.style.border='2px solid #ffa07a';
 
@@ -167,31 +167,33 @@ function focusEventPass()
     {
         e.preventDefault();
 
-        var message = 'The data is ';
-
-        var newline = '\r\n';
+        var message = '';
 
         if (emailB && passB)
         {
+            showModal("The data is correct", '<p>Sending Request</p>',
+            [ { label: "Ok", onclick: modal =>{}, triggerClose:true }]);
+
             sendRqst();
         }
 
         else 
         {
-             message += 'incorrect. Please check the next items: '
+             message += '<p>The Data is incorrect. Please check the next items:</p>'
                 
             if (!emailB) 
             {
-                message += newline + 'User email: Please enter a valid email.'
+                message += '<p>User email: Please enter a valid email.</p>'
             }
 
             if (!passB) 
             {
-                    message += newline + 'Password: Please enter a valid password. It should contain only' +
-                    ' letters and numbers';
-                }
-                alert(message);
+                message += '<p>Password: Please enter a valid password. It should contain only' +
+                ' letters and numbers.</p>' + '<p>And be longer than 7 characters.</p>' ;
             }
+            showModal("Data is incorrect", '<p>'+message+'</p>',
+            [ { label: "Ok", onclick: modal =>{}, triggerClose:true }]);
+        }
   
     }
 
@@ -217,10 +219,60 @@ function sendRqst()
             if(!response.success){
                 throw new Error (response.msg)
             }
-            alert('Request Succesful');
-            alert(response.msg);
+            showModal("Request succesful", '<p>'+ response.msg+'</p>',
+            [ { label: "Ok", onclick: modal =>{}, triggerClose:true }]);
         })
         .catch(error=> {
-          alert('there has been a problem.' + '\n' +  error);
+            showModal("Error in request", '<p>'+ error+'</p>',
+            [ { label: "Ok", onclick: modal =>{}, triggerClose:true }]);
         })
 }
+function showModal(titleHtml, contentHtml, buttons)
+    {
+        const modal = document.createElement("div");
+
+        modal.classList.add("modal");
+        modal.innerHTML = `
+            <div class="modal__inner">
+                <div class="modal__top">
+                    <div class="modal__title">${titleHtml}</div>
+                    <button class="modal__close" type="button">
+                        <span class="material-icons">
+                            close
+                        </span>
+                    </button>
+                </div>
+                <div class="modal__content">${contentHtml}</div>
+                <div class="modal__bottom"></div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        for (const button of buttons) 
+        {
+            const element = document.createElement('button');
+
+            element.setAttribute('type','button');
+
+            element.classList.add('modal__button');
+
+            element.textContent = button.label;
+
+            element.addEventListener('click', () =>
+            {
+                if (button.triggerClose) {
+                    document.body.removeChild(modal);
+                }
+
+                button.onclick(modal);
+
+            })
+
+            modal.querySelector(".modal__close").addEventListener('click', () =>
+            {
+                document.body.removeChild(modal);
+            });
+
+            modal.querySelector('.modal__bottom').appendChild(element);
+
+        }
+    }
